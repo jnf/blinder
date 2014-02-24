@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140224011548) do
   create_table "questions", force: true do |t|
     t.integer  "blind_id"
     t.string   "label"
-    t.string   "type"
+    t.string   "kind"
     t.text     "values"
     t.datetime "created_at"
     t.datetime "updated_at"

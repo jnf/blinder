@@ -3,7 +3,7 @@ class CreateQuestions < ActiveRecord::Migration
     create_table :questions do |t|
       t.integer :blind_id
       t.string  :label
-      t.string  :type
+      t.string  :kind
       t.text    :values
       t.timestamps
     end
