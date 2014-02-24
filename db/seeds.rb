@@ -20,7 +20,7 @@ balancing_info = Blind.create event: event,
 make_life_easier = Blind.create event: event,
   level: 10, #yeah. . . not really part of the evaluation process
   title: "Help Us Out",
-  info: "This information is not used for talk selection, but it will to make our lives easier if you're accepted."
+  info: "This information is not used for talk selection, but it will to make our lives easier if your proposal is accepted."
 
 Question.create blind: personal_info, label: "Name", kind: "text"
 Question.create blind: personal_info, label: "Email Address", kind: "email"
