@@ -41,6 +41,8 @@ GEM
     coffee-script-source (1.6.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    haml (4.0.5)
+      tilt
     hike (1.2.3)
     i18n (0.6.9)
     jquery-rails (3.0.4)
@@ -112,6 +114,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print (~> 1.1.0)
   coffee-rails (~> 4.0.0)
+  haml
   jquery-rails
   neat
   rails (= 4.0.2)
