@@ -30,8 +30,8 @@ Question.create blind: personal_info, label: "Websites", kind: "text"
 Question.create blind: personal_info, label: "Twitter", kind: "text"
 
 Question.create blind: make_life_easier, label: "URL to a headshot or avatar", kind: "text"
-Question.create blind: make_life_easier, label: "T-shirt cut", kind: "text"
-Question.create blind: make_life_easier, label: "T-shirt size", kind: "text"
+Question.create blind: make_life_easier, label: "T-shirt cut", kind: "radio", values: "Mens,Womens"
+Question.create blind: make_life_easier, label: "T-shirt size", kind: "radio", values: "XS,S,M,L,XL,2XL,3XL,4XL,5XL"
 
 Question.create blind: talk_info, label: "Talk Title", kind: "text"
 Question.create blind: talk_info, label: "Talk Abstract", kind: "textarea"
