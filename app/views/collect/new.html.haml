@@ -4,8 +4,5 @@
     %section{ class: "blind" }
       %h2!= blind.title
       %p!= blind.info
-      = f.fields_for blind.responses do |r|
-        - blind.responses.each do |response|
-          .question
-            = r.label :value, "#{response.question.position} #{response.question.label}"
-            = r.text_field :value
+      = render blind.responses
+  = f.submit "Submit Proposal"

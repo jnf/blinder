@@ -10,4 +10,8 @@ class CollectController < ApplicationController
     #generate the response models we'll need for the form
     @event.blinds.map { |blind| blind.new_responses_for @proposal }
   end
+
+  def create
+    @test = params
+  end
 end
