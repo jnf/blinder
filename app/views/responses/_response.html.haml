@@ -1,4 +1,4 @@
 .question
   = hidden_field_tag "responses[][question_id]", response.question.id
   = label_tag "#{response.question.id}_value", response.question.label
-  = text_field_tag "responses[][value]", nil, id: "#{response.question.id}_value"
+  = input_for response
