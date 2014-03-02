@@ -6,6 +6,8 @@ class CollectController < ApplicationController
   def new
     @event = Event.includes(blinds: :questions).find(params[:event_id])
     @proposal = Proposal.new
-    @responses = Response.generate_collection_for @event, @proposal
+
+    #generate the response models we'll need for the form
+    @event.blinds.map { |blind| blind.new_responses_for @proposal }
   end
 end
