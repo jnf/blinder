@@ -5,4 +5,11 @@ class Proposal < ActiveRecord::Base
   after_create :generate_code
 
   accepts_nested_attributes_for :responses
+
+  protected
+
+  def generate_code
+    self.code = "lolcodelol"
+    save!
+  end
 end

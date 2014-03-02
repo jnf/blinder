@@ -12,6 +12,17 @@ class CollectController < ApplicationController
   end
 
   def create
+    @proposal = Proposal.new(proposal_create_params)
+    @proposal.responses.build(params[:responses])
+    @proposal.save!
     @test = params
   end
+
+  protected
+
+  def proposal_create_params
+    params.require(:event_id)
+    params.permit(:event_id, responses: [])
+  end
 end
+  
