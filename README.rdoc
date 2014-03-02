@@ -1,28 +1,13 @@
-== README
+== Blinder
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a work in progress! Of course, what isn't? Essentially, I wanna use this textbook Rails app
+to handle RFP collections for SCRC. At some point, I'll have to write a _real_ README.
 
-Things you may want to cover:
+== TODO
 
-* Ruby version
+Here's some todos I lifted from a recent commit:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Add ordering for Blinds and Questions, then add those orders to the seed files.
+* Add helpers to generate markup for each question kind.
+* Add validation and persistence for Responses.
+* Add editing ability via unique code generation after saving.
