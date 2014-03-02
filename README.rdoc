@@ -11,3 +11,4 @@ Here's some todos I lifted from a recent commit:
 * Add helpers to generate markup for each question kind.
 * Add validation and persistence for Responses.
 * Add editing ability via unique code generation after saving.
+* Add OAUTH-y layer for controlling/configuring/accessing the app.
