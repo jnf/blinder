@@ -11,6 +11,9 @@ gem 'neat'
 gem 'awesome_print', '~> 1.1.0'
 gem 'acts_as_list'
 
+gem 'omniauth', '~> 1.2.1'
+gem 'omniauth-github', '~> 1.1.1'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 1.2'
 
