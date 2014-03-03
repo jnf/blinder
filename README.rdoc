@@ -5,10 +5,7 @@ to handle RFP collections for SCRC. At some point, I'll have to write a _real_ R
 
 == TODO
 
-Here's some todos I lifted from a recent commit:
-
-* ~~Add ordering for Blinds and Questions, then add those orders to the seed files.~~
-* Add helpers to generate markup for each question kind.
 * Add validation and persistence for Responses.
-* Add editing ability via unique code generation after saving.
 * Add OAUTH-y layer for controlling/configuring/accessing the app.
+* Style the cfp description, proposal submission form, form response (with edit slug)
+* Write, edit, and finalize copy for all the pages
