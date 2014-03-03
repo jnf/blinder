@@ -1,8 +1,8 @@
 %h1 Guess I better build a form here...
-= form_for @proposal, url: new_proposal_path(@event) do |f|
+= form_for @proposal do |f|
   - @event.blinds.each do |blind|
     %section{ class: "blind" }
       %h2!= blind.title
       %p!= blind.info
       = render blind.responses
-  = f.submit "Submit Proposal"
+  = f.submit

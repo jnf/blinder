@@ -15,14 +15,30 @@ class CollectController < ApplicationController
     @proposal = Proposal.new(proposal_create_params)
     @proposal.responses.build(params[:responses])
     @proposal.save!
-    @test = params
+  end
+
+  def edit
+    redirect_to root_path unless params[:slug]
+    @proposal = Proposal.includes(responses: { question: :blind }).find_by_slug(params[:slug])
+    @event = @proposal.event
+    @event.blinds.map { |blind| blind.existing_responses_for @proposal }
+
+    render action: :new
+  end
+
+  def update
+    params[:responses].each do |response|
+      Response.find(response['id']).update(response)
+    end
+    @proposal = Proposal.includes(:responses).find(params[:id])
+
+    render action: :create
   end
 
   protected
 
   def proposal_create_params
-    params.require(:event_id)
-    params.permit(:event_id, responses: [])
+    params.permit(:event_id, :slug, :responses)
   end
 end
   
