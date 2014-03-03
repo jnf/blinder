@@ -1,8 +1,4 @@
 module CollectHelper
-  def form_path_for(event, slug)
-    @proposal.new_record? ? new_proposal_path(event) : edit_proposal_path(slug)
-  end
-
   def input_for(response)
     id      = "#{response.question.id}_value"
     name    = "responses[][value]"
