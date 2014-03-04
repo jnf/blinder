@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140302162142) do
+ActiveRecord::Schema.define(version: 20140303040251) do
 
   create_table "blinds", force: true do |t|
     t.integer  "level"
@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 20140302162142) do
 
   create_table "proposals", force: true do |t|
     t.integer  "event_id"
-    t.text     "code"
+    t.text     "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "proposals", ["code"], name: "index_proposals_on_code"
+  add_index "proposals", ["slug"], name: "index_proposals_on_slug"
 
   create_table "questions", force: true do |t|
     t.integer  "blind_id"

@@ -9,10 +9,10 @@ Blinder::Application.routes.draw do
   get  'review' => 'review#list', as: :list
 
   controller :collect do
-    get  ':event_id/new', action: :new, as: :new_proposal
+    get  ':event_id/new', action: :new, as: :proposals
     post ':event_id/new', action: :create
-    get  'edit/:code', action: :edit, as: :edit_proposal
-    put  'edit/:code', action: :update
+    get  'edit/:slug', action: :edit, as: :proposal
+    patch  'edit/:id', action: :update
   end
 
   controller :control do

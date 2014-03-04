@@ -1,0 +1,5 @@
+.question
+  = hidden_field_tag "responses[][question_id]", response.question.id
+  = hidden_field_tag("responses[][id]", response.id) if response.id
+  = label_tag "#{response.question.id}_value", response.question.label
+  = input_for response
