@@ -6,6 +6,9 @@ class Proposal < ActiveRecord::Base
 
   after_create :generate_slug
 
+  scope :listing,   -> { select(:id, :slug, :created_at) }
+  scope :for_event, -> (event_id) { listing.where(event_id: event_id).order(:created_at) }
+
   accepts_nested_attributes_for :responses
 
   protected
