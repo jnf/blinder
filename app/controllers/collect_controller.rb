@@ -19,9 +19,13 @@ class CollectController < ApplicationController
 
   def edit
     redirect_to root_path unless params[:slug]
+
     @proposal = Proposal.includes(responses: { question: :blind }).find_by_slug(params[:slug])
     @event = @proposal.event
-    @event.blinds.map { |blind| blind.existing_responses_for @proposal }
+
+    @event.blinds.each do |blind|
+      blind.existing_responses_for @proposal
+    end
 
     render action: :new
   end
