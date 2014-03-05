@@ -1,0 +1,6 @@
+%h1= "Proposal #{ @proposal.id }"
+- @blinds.each do |blind|
+  %section{ class: "blind" }
+    %h2!= blind.title
+    %p!= blind.info
+    = render partial: 'response', collection: blind.responses

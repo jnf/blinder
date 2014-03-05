@@ -1,0 +1,4 @@
+%h1= "Submitted proposals for #{ @event.title }"
+%ul.proposal_list
+  - @proposals.each do |proposal|
+    %li= link_to proposal.slug, review_path(@event, proposal)
