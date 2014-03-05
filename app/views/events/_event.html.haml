@@ -1,0 +1,17 @@
+= form_for event do |f|
+  .input
+    = f.label :title
+    = f.text_field :title
+  .input
+    = f.label :info
+    = f.text_area :info
+  .input
+    %p.warning Changes to the blind level will take effect immidiately.
+    = f.label :blind_level
+    = f.text_field :blind_level
+    %p.info
+      %h3 Available Blinds
+      %ul
+        - event.blinds.by_level.each do |blind|
+          %li!= "#{blind.level}: #{blind.title}"
+  = f.submit

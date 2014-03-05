@@ -15,9 +15,5 @@ Blinder::Application.routes.draw do
     patch  'edit/:id', action: :update
   end
 
-  controller :control do
-    get  'events', as: :events
-    get  'config/:event_id', action: :config, as: :config
-    post 'config/:event_id', action: :update
-  end
+  resources :control, only: [:index, :edit, :update], as: :event
 end
