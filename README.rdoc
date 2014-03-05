@@ -9,3 +9,4 @@ to handle RFP collections for SCRC. At some point, I'll have to write a _real_ R
 * Add OAUTH-y layer for controlling/configuring/accessing the app.
 * Style the cfp description, proposal submission form, form response (with edit slug)
 * Write, edit, and finalize copy for all the pages
+* Tests in general, but specifically around the blinding of proposals during review
