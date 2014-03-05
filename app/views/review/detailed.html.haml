@@ -1,5 +1,5 @@
 %h1= "Proposal #{ @proposal.id }"
-- @event.blinds.each do |blind|
+- @blinds.each do |blind|
   %section{ class: "blind" }
     %h2!= blind.title
     %p!= blind.info

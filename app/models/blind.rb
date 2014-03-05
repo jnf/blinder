@@ -3,7 +3,8 @@ class Blind < ActiveRecord::Base
   acts_as_list  scope: :event
   has_many      :questions, -> { order("position DESC") }
 
-  scope :by_level, -> { unscoped.order(:level, :position) }
+  scope :by_level,    -> { unscoped.order(:level, :position) }
+  scope :visible_for, -> (event) { event.blinds.where("level <= ?", event.blind_level) }
 
   attr_accessor :responses
 

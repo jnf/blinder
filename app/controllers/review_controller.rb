@@ -9,7 +9,8 @@ class ReviewController < ApplicationController
     @proposal = Proposal.includes(responses: :question).find(params[:proposal_id])
     @event    = Event.find params[:event_id]
     
-    @event.blinds.each do |blind|
+    @blinds = Blind.visible_for(@event)
+    @blinds.each do |blind|
       blind.existing_responses_for @proposal
     end
   end
