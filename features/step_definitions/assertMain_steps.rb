@@ -10,7 +10,7 @@ end
 
 
 Given(/^that I am using Firefox$/) do
-  @b = Watir::Browser.start 'http://ponies'
+  @b = Watir::Browser.new :firefox
 end
 
 When(/^I am unauthenticated and I visit the main page$/) do
