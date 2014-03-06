@@ -14,6 +14,10 @@ module CollectHelper
     end
   end
 
+  def classes_for(question)
+    question.required? ? "required" : ""
+  end
+
   protected
 
   def radio_group(name, id, values, selected)
