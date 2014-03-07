@@ -57,6 +57,9 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+#
+# Running Cucumber with a headless configuration
+#
 if ENV['HEADLESS']
   require 'headless'
   headless = Headless.new
@@ -64,4 +67,17 @@ if ENV['HEADLESS']
   at_exit do
     headless.destroy
   end
+end
+
+#
+#  Making sure that the browser is closed properly on exit of testing
+#
+b = Watir::Browser.new
+
+Before do
+  @b = b
+end
+
+at_exit do
+  b.close
 end
