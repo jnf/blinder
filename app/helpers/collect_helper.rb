@@ -26,6 +26,14 @@ module CollectHelper
     question.required? ? "required" : ""
   end
 
+  def form_title_for(proposal)
+    if proposal.new_record?
+      "Submit a New Proposal"
+    else
+      "Edit Your Proposal."
+    end
+  end
+
   protected
 
   def radio_group(name, id, values, selected)
