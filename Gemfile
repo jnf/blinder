@@ -41,3 +41,13 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use watir-webdriver + cucumber for functional testing
+gem 'watir-webdriver'
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  gem 'headless'
+end
