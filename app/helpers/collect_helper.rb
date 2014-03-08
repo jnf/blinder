@@ -14,6 +14,14 @@ module CollectHelper
     end
   end
 
+  def size_class_for(response)
+    case response.question.kind
+      when "textarea" then 'large'
+      when "radio"    then 'small'
+      else ""
+    end
+  end
+
   def classes_for(question)
     question.required? ? "required" : ""
   end
@@ -24,7 +32,7 @@ module CollectHelper
     values.each_with_index.map { |value, index|
       indexed_id = "#{id}_#{index}"
       button = radio_button_tag name, value, selected == value, id: indexed_id
-      label_tag indexed_id do
+      label_tag indexed_id, class: 'radio' do
         button + value
       end
     }.reduce &:+

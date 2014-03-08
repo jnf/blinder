@@ -1,8 +1,12 @@
-%h1 Guess I better build a form here...
+%h2 Guess I better build a form here...
+%p.info
+  %span.required *
+  indicates a required field
+
 = form_for @proposal do |f|
   - @event.blinds.each do |blind|
     %section{ class: "blind" }
-      %h2!= blind.title
-      %p!= blind.info
+      %h3.title!= blind.title
+      %p.info!= blind.info
       = render blind.responses
   = f.submit
