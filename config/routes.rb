@@ -11,7 +11,7 @@ Blinder::Application.routes.draw do
   # omniauth provider callback for github auth
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
-  post 'signout', to: 'sessions#destroy', as: 'signout'
+  delete 'signout', to: 'sessions#destroy', as: 'signout'
 
   controller :collect do
     get    ':event_id/new', action: :new, as: :proposals
