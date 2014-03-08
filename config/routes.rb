@@ -8,6 +8,11 @@ Blinder::Application.routes.draw do
   # get  'review/:event_id/proposal/:proposal_id' => 'review#detailed', as: :review
   # get  'review/:event_id' => 'review#list', as: :list
 
+  # omniauth provider callback for github auth
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  delete 'signout', to: 'sessions#destroy', as: 'signout'
+
   controller :collect do
     get    ':event_id/new', action: :new, as: :proposals
     post   ':event_id/new', action: :create

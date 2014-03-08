@@ -8,12 +8,14 @@
 
     %title= @title || "Steel City Ruby: CFP"
 
+    = javascript_include_tag "application"
     = stylesheet_link_tag "application"
     = csrf_meta_tags
 
   %body
     %main
       = link_to content_tag(:h1, "Steel City Ruby"), "http://steelcityruby.org", class: 'logo'
+      = render 'shared/user_nav'
       .content= yield
     %footer=  image_tag 'skyline.png', alt: "Pittsburgh downtown skyline"
-
+    
