@@ -1,0 +1,16 @@
+// Variables
+$yellow: #FFCC2F;
+$black:  #171D1E;
+$white:  #FFF;
+$color-text: #222;
+
+
+//Mixins
+@mixin type-body {
+  color: $color-text;
+  font: normal normal 16px/1.4 "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+@mixin type-code {
+  font: normal normal 1rem "Courier New", Courier, sans-serif;
+}
