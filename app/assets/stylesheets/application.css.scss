@@ -31,6 +31,11 @@ main {
   clear: both;
   overflow: auto;
   margin: 1rem 0;
+
+  h4 {
+    border-bottom: 1px solid $yellow;
+    margin-bottom: 1rem;
+  }
 }
 
 .info {
@@ -102,5 +107,17 @@ main {
   textarea {
     height: 10rem;
     width: 100%;
+  }
+}
+
+.review_proposal {
+  margin: 2rem 0;
+  .blind { border: none; }
+}
+
+.response {
+  @include media(790px) {
+    @include span-columns(10);
+    @include shift;
   }
 }

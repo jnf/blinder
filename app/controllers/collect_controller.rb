@@ -52,7 +52,8 @@ class CollectController < ApplicationController
   end
 
   def thanks
-    @proposal = Proposal.find_by_slug params[:slug]
+    @proposal = Proposal.includes(event: { blinds: :questions }).find_by_slug params[:slug]
+    @blinds = @proposal.event.blinds
   end
 
   protected

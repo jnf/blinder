@@ -1,1 +1,19 @@
-= debug @proposal
+.thanks
+  %h2 Thank you!
+  %p
+    We've received your proposal. You should receive an email confirmation in the next hour or so.
+    If you have any questions or concerns, please contact our
+    = mail_to "CFP Team.", "cfp@steelcityruby.org"
+  %p
+    Below is a copy of your submitted proposal. If you discover any errors or omissions, you can
+    = link_to "edit your proposal.", proposal_path(@proposal.slug)
+    The confirmation email will also include editing instructions. You're welcome to edit this proposal
+    until the CFP closes.
+
+.review_proposal
+  %h3= "Your proposal for #{ @proposal.event.title }"
+
+  - @blinds.each do |blind|
+    %section{ class: "blind" }
+      %h4!= blind.title
+      = render partial: 'review/response', collection: @proposal.responses_for(blind)

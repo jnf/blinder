@@ -11,6 +11,11 @@ class Proposal < ActiveRecord::Base
 
   accepts_nested_attributes_for :responses
 
+  def responses_for(blind)
+    question_ids = blind.questions.map &:id
+    responses.where(question_id: question_ids)
+  end
+
   protected
 
   def generate_slug
