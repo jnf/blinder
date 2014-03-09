@@ -8,7 +8,7 @@ class Response < ActiveRecord::Base
   protected
 
   def get_value_for_radio(value_hash)
-  	self.value = value_hash.values.first.to_s
+    self.value = value_hash.values.first.to_s
   end
 
   def required_field?
