@@ -1,0 +1,5 @@
+.errors
+  %h4 Uh oh! We found the following errors. Please review your entries and try submitting again.
+  %ul
+    - errors.each do |group, errors|
+      != errors.map { |error| content_tag :li, error }.join

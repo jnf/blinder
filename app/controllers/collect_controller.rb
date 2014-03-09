@@ -15,7 +15,18 @@ class CollectController < ApplicationController
   def create
     @proposal = Proposal.new(proposal_create_params)
     @proposal.responses.build(params[:responses])
-    @proposal.save!
+
+    if @proposal.save
+      render action: :thanks
+    else
+      @errors = @proposal.errors.messages
+      @event = @proposal.event
+      @event.blinds.each do |blind|
+        blind.posted_responses_for @proposal
+      end
+
+      render action: :new
+    end
   end
 
   def edit

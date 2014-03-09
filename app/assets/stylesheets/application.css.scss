@@ -34,9 +34,32 @@ main {
 }
 
 .info {
+  clear: both;
   font-style: italic;
   .required {
     color: red;
+  }
+}
+
+.errors {
+  border: 2px solid $red;
+  margin: 1rem;
+  @include media(790px) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+  h4 {
+    background: $red;
+    color: $white;
+    margin: 0;
+    padding: .5rem;
+  }
+  ul {
+    padding: .5rem;
+  }
+  li {
+    margin: .25rem 0;
+    span { font-weight: 500; }
   }
 }
 
