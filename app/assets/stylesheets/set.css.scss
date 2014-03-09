@@ -1,0 +1,446 @@
+@import 'config';
+
+// ---------------------------------------------------------
+// Set.scss
+// A Sass normalize + base stylesheet
+//
+// This project tracks:
+// normalize.css v2.1.2 (https://github.com/necolas/normalize.css)
+// HTML5 Boilerplate v4.2.0 (https://github.com/h5bp)
+//
+// Homepage: https://github.com/robwierzbowski/set.scss
+// ---------------------------------------------------------
+
+// Universal
+// ---------------------------------------------------------
+
+// Border-box is required.
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+// HTML5 set
+// ---------------------------------------------------------
+
+// Set display: block (Normalize)
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+// Set display: none (Normalize)
+[hidden],
+template {
+  display: none;
+}
+
+// Base
+// ---------------------------------------------------------
+
+// Set font-family, text-size-adjust (Normalize)
+html {
+  @include type-body();
+  color: $color-text;
+  text-size-adjust: 100%;
+  height: 100%;
+}
+
+// Set margin (Normalize)
+body {
+  min-width: 760px;
+  background: $yellow;
+
+  // Force load of adobe-blank on Windows Chrome (31/2)
+  &:after {
+    content: " ";
+    font-family: "adobe-blank";
+  }
+}
+
+// Focus
+// ---------------------------------------------------------
+
+:focus {
+  outline: 0; // TODO: add some focus styles back in
+}
+
+// Selection
+// ---------------------------------------------------------
+
+// Set text-shadow: none (H5BP)
+::-moz-selection {
+  text-shadow: none;
+  background: #999;
+}
+::selection {
+  text-shadow: none;
+  background: #999;
+}
+
+// Links
+// ---------------------------------------------------------
+
+// Set background (Normalize)
+a {
+  background: transparent;
+
+  &:link {}
+  &:visited {}
+
+  &:hover,
+  &:focus {}
+
+  // Set outline (Normalize)
+  &:focus {
+    outline: thin dotted;
+  }
+
+  // Set outline: 0 (Normalize)
+  &:hover {
+    outline: 0;
+  }
+
+  &:active {
+    outline: 0;
+  }
+}
+
+// Headings and Paragraph
+// ---------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1rem 0;
+  font-weight:inherit;
+  font-size:inherit;
+  line-height:inherit;
+
+  a {
+    color: inherit;
+  }
+}
+
+// Set margin, font-size (Normalize)
+h1 {}
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.5rem; }
+h4 {}
+h5 {}
+h6 {}
+
+p {
+  margin:0 0 1em;
+}
+
+// Set height (Normalize)
+// Set styles (H5BP)
+hr {
+  height: 0px;
+  margin:0 0 1em;
+}
+
+// Quotes
+// ---------------------------------------------------------
+
+blockquote {
+  margin:0 0 1em;
+}
+
+// Set quotes (Normalize)
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+// Figures
+// ---------------------------------------------------------
+
+// Set margin (Normalize)
+figure {
+  margin: 0;
+
+  & > img {
+    display:block;
+  }
+}
+
+figcaption {}
+
+// Lists
+// ---------------------------------------------------------
+
+// Clear list styles so we can use lists for semantic markup.
+// Set bulleted list styles in appropriate content modules.
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  ol,
+  ul {}
+}
+
+dl {
+  margin: 0;
+}
+dt {}
+dd {
+  margin: 0;
+}
+
+// Emphasis
+// ---------------------------------------------------------
+
+em {}
+
+// Set font-weight (Normalize)
+strong {
+  font-weight: bold;
+}
+
+// Code
+// ---------------------------------------------------------
+
+// Set font-size, font-family (Normalize)
+code,
+kbd,
+samp {
+  font-size: 1em;
+  @include type-code;
+}
+
+// Set font-size, font-family (Normalize)
+// Set white-space: pre-wrap (Normalize)
+pre {
+  margin: 0 0 1em;
+  font-size: 1em;
+  @include type-code;
+  white-space: pre-wrap;
+}
+
+// Additional semantic text
+// ---------------------------------------------------------
+
+abbr {
+
+  // Set border-bottom (Normalize)
+  &[title] {
+    border-bottom: 1px dotted;
+  }
+}
+
+// Set font-style (Normalize)
+dfn {
+  font-style: italic;
+}
+
+address {
+  font-style:normal;
+}
+cite {}
+
+del {
+  text-decoration: line-through;
+}
+
+ins {}
+
+// Set color, background (Normalize)
+mark {
+  color: #000;
+  background: #ff0;
+}
+
+// Set font-size (Normalize)
+small {
+  font-size:100%;
+}
+
+// Set sub and sup styles (Normalize)
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+// Images and Embedded content
+// ---------------------------------------------------------
+
+// Set display (Normalize)
+// Set vertical-align: middle (H5BP)
+img,
+canvas,
+audio,
+video {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// Responsive content
+img,
+embed,
+object,
+video {
+  width: auto; // IE8
+  max-width: 100%;
+  height: auto;
+}
+
+// Set border, interpolation-mode: bicubic (Normalize)
+img {
+  border: 0;
+
+  -ms-interpolation-mode: bicubic;
+}
+
+// Set overflow: hidden (Normalize)
+svg:not(:root) {
+  overflow: hidden;
+}
+
+iframe {}
+
+// Set display: none, height: 0 (Normalize)
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+// Tables
+// ---------------------------------------------------------
+
+// Set  border-spacing, border-collapse (Normalize)
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th {}
+td {}
+
+// Forms
+// ---------------------------------------------------------
+
+form {
+  margin:0;
+}
+
+// Set margin, padding, border (Normalize)
+fieldset {
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+  border: 1px solid #c0c0c0;
+}
+
+// Set padding, border (Normalize)
+legend {
+  padding: 0;
+  border: 0;
+}
+
+// Set margin, font-family, font-size (Normalize)
+// Set text-transform: none (Normalize)
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  text-transform: none;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+// Set line-height (Normalize)
+button,
+input {
+  line-height: normal;
+
+  // Set cursor: default (Normalize)
+  html &[disabled] {
+    cursor: default;
+  }
+
+  // Set padding: 0, border: 0 (Normalize)
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}
+
+// Set cursor: pointer, -webkit-appearance: button (Normalize)
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  padding: .25rem;
+  white-space: nowrap;
+  cursor: pointer;
+
+  -webkit-appearance: button;
+
+  // Remove Firefox focus styles
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}
+
+// Set padding (Normalize)
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+}
+
+// Set -webkit-appearance: textfield (Normalize)
+input[type="search"] {
+
+  -webkit-appearance: textfield;
+
+  // Set -webkit-appearance: none (Normalize)
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+
+    -webkit-appearance: none;
+  }
+}
+
+// Set overflow: auto, vertical-align: top (Normalize)
+// Set resize (H5BP)
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
