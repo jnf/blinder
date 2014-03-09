@@ -18,7 +18,7 @@ module CollectHelper
     case response.question.kind
       when "textarea" then 'large'
       when "radio"    then 'small'
-      else ""
+      else "other"
     end
   end
 
