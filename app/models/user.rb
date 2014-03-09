@@ -1,5 +1,11 @@
 class User < ActiveRecord::Base
 
+  USER_ROLES=[
+    'admin',
+    'reviewer',
+    'default'
+  ]
+
   # This should not be used because we do not allow open registration
   # Use check_from_omniauth below
   def self.register_from_omniauth(auth)
@@ -22,6 +28,10 @@ class User < ActiveRecord::Base
       user.save!
     end
     user
+  end
+
+  def role
+    'default'
   end
 
 end
