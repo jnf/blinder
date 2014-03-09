@@ -1,4 +1,6 @@
 class ReviewController < ApplicationController
+  before_filter :authenticate!
+
   def list
     @event      = Event.find params[:event_id]
     @proposals  = Proposal.for_event @event

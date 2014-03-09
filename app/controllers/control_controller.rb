@@ -1,4 +1,5 @@
 class ControlController < ApplicationController
+  before_filter :authenticate!
   def index
     @events = Event.order(:title)
   end
