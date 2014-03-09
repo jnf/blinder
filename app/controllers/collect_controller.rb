@@ -43,12 +43,23 @@ class CollectController < ApplicationController
   end
 
   def update
-    params[:responses].each do |response|
-      Response.find(response['id']).update(response)
-    end
     @proposal = Proposal.includes(:responses).find(params[:id])
+    @proposal.responses.each do |response|
+      selected = params[:responses].find { |param| param[:id] == response.id.to_s }
+      response.update(selected) if selected
+    end
 
-    render action: :create
+    if @proposal.save
+      redirect_to thanks_path @proposal.slug
+    else
+      @errors = @proposal.errors.messages
+      @event = @proposal.event
+      @event.blinds.each do |blind|
+        blind.posted_responses_for @proposal
+      end
+
+      render action: :new
+    end
   end
 
   def thanks
