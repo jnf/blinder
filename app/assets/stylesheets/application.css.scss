@@ -22,6 +22,8 @@ main {
 
 .content {
   background: $white;
+  border: 1px solid #bbb;
+  box-shadow: 0 0 3px #aaa;
   margin: 1rem 0;
   padding: 1rem;
 }
@@ -107,6 +109,7 @@ main {
   textarea {
     height: 10rem;
     width: 100%;
+    padding: .25rem;
   }
 }
 

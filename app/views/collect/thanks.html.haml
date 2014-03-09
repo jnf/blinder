@@ -3,7 +3,7 @@
   %p
     We've received your proposal. You should receive an email confirmation in the next hour or so.
     If you have any questions or concerns, please contact our
-    = mail_to "CFP Team.", "cfp@steelcityruby.org"
+    != "#{ mail_to "cfp@steelcityruby.org", "CFP Team" }."
   %p
     Below is a copy of your submitted proposal. If you discover any errors or omissions, you can
     = link_to "edit your proposal.", proposal_path(@proposal.slug)
