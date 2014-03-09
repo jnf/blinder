@@ -241,3 +241,10 @@ Feature: Proposals form page
     And I have populated the text field for Twitter with valid information
     Then I should be able to submit the form without error
     And I should see a success on submission message
+
+  Scenario: The proposals page form, when saved, triggers email to jnf and seejee
+    Given that I am unauthenticated and I visit the proposals page
+    And I have filled out the form with all required information
+    Then I should be able to submit the form without error
+    And email is sent to jnf
+    And email is sent to seejee
