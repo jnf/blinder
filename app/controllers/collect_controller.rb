@@ -17,7 +17,7 @@ class CollectController < ApplicationController
     @proposal.responses.build(params[:responses])
 
     if @proposal.save
-      render action: :thanks
+      redirect_to thanks_path @proposal.slug
     else
       @errors = @proposal.errors.messages
       @event = @proposal.event
@@ -49,6 +49,10 @@ class CollectController < ApplicationController
     @proposal = Proposal.includes(:responses).find(params[:id])
 
     render action: :create
+  end
+
+  def thanks
+    @proposal = Proposal.find_by_slug params[:slug]
   end
 
   protected

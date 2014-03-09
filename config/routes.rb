@@ -1,9 +1,4 @@
 Blinder::Application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
   root 'collect#home'
   # get  'review/:event_id/proposal/:proposal_id' => 'review#detailed', as: :review
   # get  'review/:event_id' => 'review#list', as: :list
@@ -15,8 +10,9 @@ Blinder::Application.routes.draw do
 
   controller :collect do
     get    ':event_id/new', action: :new, as: :proposals
-    post   ':event_id/new', action: :create
+    get    'thanks/:slug', action: :thanks, as: :thanks
     get    'edit/:slug', action: :edit, as: :proposal
+    post   ':event_id/new', action: :create
     patch  'edit/:id', action: :update
   end
 
