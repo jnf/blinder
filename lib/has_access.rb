@@ -7,9 +7,9 @@ module HasAccess
   end
 
   def has_access?
-    redirect_to root_path and return if current_user.nil?
     class_name = self.class.to_s.downcase
-    cans = UserCans.find_for current_user
+    cans = UserCans::Default
+    cans = UserCans.find_for current_user unless current_user.nil?
     allow = cans.can? class_name.to_sym
 
     redirect_to root_path unless allow

@@ -30,8 +30,4 @@ class User < ActiveRecord::Base
     user
   end
 
-  def role
-    'default'
-  end
-
 end
