@@ -39,18 +39,17 @@ Question.create blind: personal_info, required: true, label: "Bio", kind: "texta
 Question.create blind: personal_info, required: false, label: "Websites", kind: "text", position: position
 Question.create blind: personal_info, required: false, label: "Twitter", kind: "text", position: position
 
+Question.create blind: make_life_easier, required: true, label: "T-shirt cut", kind: "radio", values: "Mens,Womens", position: position, group: "shirt_cut"
+Question.create blind: make_life_easier, required: true, label: "T-shirt size", kind: "radio", values: "XS,S,M,L,XL,2XL,3XL,4XL,5XL", position: position, group: "shirt_size"
 Question.create blind: make_life_easier, required: true, label: "URL to a headshot or avatar", kind: "text", position: position(true)
-Question.create blind: make_life_easier, required: true, label: "T-shirt cut", kind: "radio", values: "Mens,Womens", position: position
-Question.create blind: make_life_easier, required: true, label: "T-shirt size", kind: "radio", values: "XS,S,M,L,XL,2XL,3XL,4XL,5XL", position: position
 
 Question.create blind: talk_info, required: true, label: "Talk Title", kind: "text", position: position(true)
-Question.create blind: talk_info, required: true, label: "Talk Abstract", kind: "textarea", position: position
-Question.create blind: talk_info, required: true, label: "Talk Focus", kind: "radio", values: "Technical,People,Both", position: position
 Question.create blind: talk_info, required: true, label: "Intended Audience (technical level, background, etc)", kind: "text", position: position
+Question.create blind: talk_info, required: true, label: "Talk Focus", kind: "radio", values: "Technical,People,Both", position: position, group: "focus"
+Question.create blind: talk_info, required: true, label: "Talk Abstract", kind: "textarea", position: position
 Question.create blind: talk_info, required: true, label: "Why would this talk be a good fit for the Steel City Ruby audience?", kind: "textarea", position: position
 
 Question.create blind: balancing_info, required: false, label: "Previous Conference Speaking Experience", kind: "textarea", position: position(true)
 Question.create blind: balancing_info, required: true, label: "Years of Ruby Experience", kind: "text", position: position
 Question.create blind: balancing_info, required: true, label: "Do you have any current or past connections to the Western PA area? If so, what?", kind: "textarea", position: position
 Question.create blind: balancing_info, required: false, label: "At which other conferences has this talk been presented?", kind: "textarea", position: position
-

@@ -9,10 +9,14 @@
     %title= @title || "Steel City Ruby: CFP"
 
     = stylesheet_link_tag "application"
+
     = javascript_include_tag "application"
+
     = csrf_meta_tags
 
   %body
-    = render 'shared/user_nav'
-    .notice= flash[:notice]
-    = yield
+    %main
+      = link_to content_tag(:h1, "Steel City Ruby"), "http://steelcityruby.org", class: 'logo'
+      .notice= flash[:notice]
+      .content= yield
+    %footer=  image_tag 'skyline.png', alt: "Pittsburgh downtown skyline"

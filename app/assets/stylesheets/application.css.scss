@@ -1,0 +1,77 @@
+ @import "bourbon";
+ @import "neat";
+ @import "set";
+
+main {
+  @include outer-container;
+  padding: 1rem;
+}
+
+.logo {
+  display: block;
+  width: 500px;
+  height: 87px;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: url(asset_path('scr_script.png')) no-repeat left top;
+  background-size: cover; // For SVGs
+}
+
+.content {
+  background: $white;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.blind {
+  border-bottom: 5px dashed $yellow;
+  clear: both;
+  overflow: auto;
+  margin: 1rem 0;
+}
+
+.info {
+  font-style: italic;
+  .required {
+    color: red;
+  }
+}
+
+.question {
+  @include span-columns(6);
+  margin: 1rem 0;
+
+  &.large { @include span-columns(12); }
+  &.small { @include span-columns(4); }
+
+  label {
+    display: block;
+    font-weight: 700;
+    &.radio {
+      font-weight: 300;
+      float: left;
+      margin: 0 1rem 0 0;
+    }
+    &.required::before {
+      content: " * ";
+      color: red;
+    }
+    input {
+      height: auto;
+      width: auto;
+      margin: 0 .25rem 0 0;
+    }
+  }
+
+  input {
+    width: 90%;
+    height: 2rem;
+    padding: .25rem;
+  }
+
+  textarea {
+    height: 10rem;
+    width: 90%;
+  }
+}
