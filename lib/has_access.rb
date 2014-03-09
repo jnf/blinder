@@ -7,12 +7,15 @@ module HasAccess
   end
 
   def has_access?
-    class_name = self.class.to_s.downcase
+    class_name = self.class.to_s.downcase.gsub('controller','')
     cans = UserCans::Default
     cans = UserCans.find_for current_user unless current_user.nil?
     allow = cans.can? class_name.to_sym
 
-    redirect_to root_path unless allow
+    if !allow
+      flash[:notice] = "You are not authorized to access #{class_name.capitalize}"
+      redirect_to root_path
+    end
   end
 
 end
