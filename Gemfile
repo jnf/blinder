@@ -14,6 +14,8 @@ gem 'ffi', "= 1.9.0" #1.9.3 disagrees with heroku
 gem 'omniauth', '~> 1.2.1'
 gem 'omniauth-github', '~> 1.1.1'
 
+gem 'cancancan', '~> 1.7'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 1.2'
 
