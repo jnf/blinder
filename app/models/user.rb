@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-  def self.from_omniauth(auth)
+
+  # This should not be used because we do not allow open registration
+  # Use check_from_omniauth below
+  def self.register_from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid
@@ -9,4 +12,9 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+
+  def self.check_from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first
+  end
+
 end
