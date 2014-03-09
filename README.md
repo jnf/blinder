@@ -1,9 +1,9 @@
-== Blinder
+# Blinder
 
 This is a work in progress! Of course, what isn't? Essentially, I wanna use this textbook Rails app
 to handle RFP collections for SCRC. At some point, I'll have to write a _real_ README.
 
-== Running Cucumber
+## Running Cucumber
 
 This forked version has Cucumber included.
 
