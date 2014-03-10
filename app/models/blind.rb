@@ -15,4 +15,9 @@ class Blind < ActiveRecord::Base
   def existing_responses_for(proposal)
     @responses = questions.map { |question| proposal.responses.where(question: question).first }
   end
+
+  def posted_responses_for(proposal)
+    question_ids = questions.map &:id
+    @responses = proposal.responses.select { |response| question_ids.include? response.question_id }
+  end
 end
