@@ -44,7 +44,7 @@ Question.create blind: make_life_easier, required: true, label: "T-shirt size", 
 Question.create blind: make_life_easier, required: true, label: "URL to a headshot or avatar", kind: "text", position: position(true)
 
 Question.create blind: talk_info, required: true, label: "Talk Title", kind: "text", position: position(true)
-Question.create blind: talk_info, required: true, label: "Talk Focus", kind: "radio", values: "Technical,People,Both", position: position, group: "focus"
+Question.create blind: talk_info, required: true, label: "Talk Focus", kind: "radio", values: "Technical,People/Process,Hybrid/Other", position: position, group: "focus"
 Question.create blind: talk_info, required: true, label: "Intended Audience (technical level, background, etc)", kind: "textarea", position: position
 Question.create blind: talk_info, required: true, label: "Talk Abstract", kind: "textarea", position: position
 Question.create blind: talk_info, required: true, label: "Why would this talk be a good fit for the Steel City Ruby audience?", kind: "textarea", position: position

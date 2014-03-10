@@ -77,7 +77,7 @@ main {
   @include media(790px) {
     &.other { @include span-columns(6); @include omega(2n); }
     &.large { @include span-columns(12); }
-    &.small { @include span-columns(4); }
+    &.small { @include span-columns(4.5); }
   }
 
 
