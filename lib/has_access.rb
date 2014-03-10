@@ -2,7 +2,7 @@ module HasAccess
 
   def self.included(base)
     base.class_eval do
-      before_filter :has_access?
+      
     end
   end
 

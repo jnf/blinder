@@ -1,6 +1,7 @@
 class ControlController < ApplicationController
-  before_filter :authenticate!
   include HasAccess
+  before_filter :authenticate!
+  before_filter :has_access?
 
   def index
     @events = Event.order(:title)
