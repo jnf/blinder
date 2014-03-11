@@ -1,5 +1,7 @@
 class ReviewController < ApplicationController
+  include HasAccess
   before_filter :authenticate!
+  before_filter :has_access?
 
   def list
     @event      = Event.find params[:event_id]
