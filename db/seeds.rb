@@ -75,7 +75,7 @@ reviewers = [
   { uid: 197224,  name: 'Colin Dean' },
   { uid: 193874,  name: 'Carol Nichols' },
   { uid: 45143,   name: 'Daniel Buch' },
-  { uid: 22186,   name: 'Justing Geibel' },
+  { uid: 22186,   name: 'Justin Geibel' },
   { uid: 225823,  name: 'Bruce Adams' },
   { uid: 38176,   name: 'Marylou Lenhart' },
   { uid: 1543891, name: 'Jared Wilkerson' },
