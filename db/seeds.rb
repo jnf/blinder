@@ -6,7 +6,7 @@ event = Event.create title: 'Steel City Ruby 2014 RFP',
 personal_info = Blind.create event: event,
   level: 5,
   title: "Personal &amp; Contact Information",
-  info: "Your identifiyng information is not available to the seletion committee during the proposal evaluation process. We gather this infromation only to have a means to contact you once the selection process is complete.",
+  info: "Your identifying information is not available to the selection committee during the proposal evaluation process. We gather this information only to have a means of contacting you once the selection process is complete.",
   position: 0
 
 talk_info = Blind.create event: event,
@@ -18,7 +18,7 @@ talk_info = Blind.create event: event,
 balancing_info = Blind.create event: event,
   level: 2,
   title: "Balancing Information",
-  info: "This information is not given to the selection committee until a late round in the selection process. It is used to provide contextual infromation about proposals and provides additional differentiation between similarly strong proposals.",
+  info: "This information is not given to the selection committee until a late round in the selection process. It is used to provide contextual information about proposals and provides additional differentiation between similarly strong proposals.",
   position: 2
 
 make_life_easier = Blind.create event: event,
