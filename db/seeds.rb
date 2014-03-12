@@ -1,3 +1,4 @@
+# Core Event & associated Blinds
 event = Event.create title: 'Steel City Ruby 2014 RFP',
   blind_level: 0,
   info: 'this is just a seed file. :/'
@@ -32,6 +33,7 @@ def position(reset = false)
   position = position + 1
 end
 
+# Questions for the Blinds!
 Question.create blind: personal_info, required: true, label: "Name", kind: "text", position: position(true)
 Question.create blind: personal_info, required: true, label: "Email Address", kind: "email", position: position
 Question.create blind: personal_info, required: true, label: "Phone Number", kind: "tel", position: position
@@ -53,3 +55,35 @@ Question.create blind: balancing_info, required: false, label: "Previous Confere
 Question.create blind: balancing_info, required: true, label: "Years of Ruby Experience", kind: "text", position: position
 Question.create blind: balancing_info, required: true, label: "Do you have any current or past connections to the Western PA area? If so, what?", kind: "textarea", position: position
 Question.create blind: balancing_info, required: false, label: "At which other conferences has this talk been presented?", kind: "textarea", position: position
+
+# User records for members of the selection committee
+
+# Admin users
+admins = [
+  { uid: 27784,  name: 'Jeremy Flores' },
+  { uid: 159591, name: 'Paul Scarrone' },
+  { uid: 553936, name: 'Chris Geihsler' }
+]
+
+admins.each do |admin|
+  User.create uid: admin[:uid], name: admin[:name], role: 'admin', provider: 'github'
+end
+
+# Review users
+reviewers = [
+  { uid: 150839,  name: 'Justin Reese' },
+  { uid: 197224,  name: 'Colin Dean' },
+  { uid: 193874,  name: 'Carol Nichols' },
+  { uid: 45143,   name: 'Daniel Buch' },
+  { uid: 22186,   name: 'Justin Geibel' },
+  { uid: 225823,  name: 'Bruce Adams' },
+  { uid: 38176,   name: 'Marylou Lenhart' },
+  { uid: 1543891, name: 'Jared Wilkerson' },
+  { uid: 1873205, name: 'Zack Mance' },
+  { uid: 1133473, name: 'Corey Purcell' },
+  { uid: 1461735, name: 'Jean Lange' }
+]
+
+reviewers.each do |reviewer|
+  User.create uid: reviewer[:uid], name: reviewer[:name], role: 'reviewer', provider: 'github'
+end
