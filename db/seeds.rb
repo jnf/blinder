@@ -1,12 +1,12 @@
 # Core Event & associated Blinds
 event = Event.create title: 'Steel City Ruby 2014 RFP',
   blind_level: 0,
-  info: 'this is just a seed file. :/'
+  info: File.read('db/texts/event_info.md')
 
 personal_info = Blind.create event: event,
   level: 5,
   title: "Personal &amp; Contact Information",
-  info: "Your identifying information is not available to the selection committee during the proposal evaluation process. We gather this information only to have a means of contacting you once the selection process is complete.",
+  info: "Your identifying information is not available to the selection committee during the initial proposal evaluation process. We ask for this information to have a means of contacting you once the selection process is complete.",
   position: 0
 
 talk_info = Blind.create event: event,
