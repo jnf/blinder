@@ -6,7 +6,7 @@ event = Event.create title: 'Steel City Ruby 2014 RFP',
 personal_info = Blind.create event: event,
   level: 5,
   title: "Personal &amp; Contact Information",
-  info: "Your identifying information is not available to the selection committee until the last round of evaluation and is important to have a means of contacting you. We will never share your contact information.",
+  info: "Your identifying information is not available to the selection committee until the last round of evaluation and is important to have a means of contacting you. We will never share or publish your contact information without asking you directly.",
   position: 0
 
 talk_info = Blind.create event: event,
