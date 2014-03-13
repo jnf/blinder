@@ -13,7 +13,7 @@ _Talk Information_ is the primary data used during proposal evaluation and selec
 
 _Balancing Information_ is used to provide contextual information about proposals and how they would fit together as a whole conference. There are no wrong answers to these questions!
 
-_Personal &amp; Contact Information_ is used during the very last round of the selection process to confirm basic feasibility of selections, like making sure one person isn't picked to do two talks (it's totally fine to submit more than one proposal but we'll only select one per person).
+_Personal &amp; Contact Information_ is used during the very last round of the selection process to confirm basic feasibility of selections, like making sure one person isn't picked to do two talks (it's totally fine to submit more than one proposal but we'll only select one per person). We will never share or publish your information without your explicit permission. If you are selected to be a presenter, we will contact you for permissions to share some details (like your name and twitter handle) on the SCRC website.
 
 _Help Us Out_ is not used at any point during the talk selection process, but if you're selected, it will help us immensely with things like ordering t&#45;shirts and updating the SCRC website.
 
@@ -30,7 +30,7 @@ Here's the basic timeline of how we will move from collecting proposals to annou
 ### Completing the CFP form
 Ok, so you get how the process works. The CFP form is broken into groups that reflect the
 blinding levels described above. Required fields are marked with a red asterisk
-(<span class="required">*</span>). After you submit your proposal, you'll receive both a browser and email confirmation of your submission. The confirmation contains a unique, private editing url for your proposal; you're welcome to edit your proposal until the CFP closes on __19 April 2014__.
+(<span class="required">*</span>). After you submit your proposal, you'll receive both a browser and email confirmation of your submission. The confirmation contains a unique, private editing URL for your proposal; you're welcome to edit your proposal until the CFP closes on __19 April 2014__.
 
 __If you have any problems or concerns with the form or the process, please reach out via email to cfp@steelcityruby.org. That address goes directly to SCRC organizers tasked with ensuring that everyone has the opportunity to participate in this process and who have recused themselves from the blinded rounds of review.__
 

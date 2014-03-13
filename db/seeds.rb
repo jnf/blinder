@@ -1,5 +1,5 @@
 # Core Event & associated Blinds
-event = Event.create title: 'Steel City Ruby 2014 RFP',
+event = Event.create title: 'Steel City Ruby 2014 CFP',
   blind_level: 0,
   info: File.read('db/texts/event_info.md')
 
