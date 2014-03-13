@@ -13,7 +13,7 @@ _Talk Information_ is the primary data used during proposal evaluation and selec
 
 _Balancing Information_ is used to provide contextual information about proposals and how they would fit together as a whole conference. There are no wrong answers to these questions!
 
- _Personal &amp; Contact Information_ is used to make sure of things like one person not doing two talks (it's totally fine to submit more than one proposal but we'll only select one per person).
+_Personal &amp; Contact Information_ is used during the very last round of the selection process to confirm basic feasibility of selections, like making sure one person isn't picked to do two talks (it's totally fine to submit more than one proposal but we'll only select one per person).
 
 _Help Us Out_ is not used at any point during the talk selection process, but if you're selected, it will help us immensely with things like ordering t&#45;shirts and updating the SCRC website.
 
@@ -22,7 +22,6 @@ Here's the basic timeline of how we will move from collecting proposals to annou
 1. __Open &amp; Publicize the CFP:__ The CFP opens __Thursday, 13 March 2014__. We will accept proposals through the end of __Saturday, 19 April 2014__ (11:59pm Eastern Time).
 
 1. __Evaluate blinded proposals__: After collection ends, we will begin reviewing submitted proposals. The review process is arranged in three distinct phases. During the first phase, reviewers will have access only to the _Talk Information_ portion of the proposal responses. A subset of the submitted proposals will advance to the second round, in which the _Balancing Information_ section will become visible to reviewers. From there, the selection committee will narrow the pool further and make their final selections for presenters and alternates, using the  _Personal &amp; Contact Information_ to make sure no one has two talks.
-
 
 1. __Contact everyone:__ We will reach out to selected presenters and alternates to confirm their inclusion. We will also contact submitters not selected as a presenter or alternate so that no one is left guessing.
 
