@@ -25,6 +25,7 @@ main {
   border: 1px solid #bbb;
   box-shadow: 0 0 3px #aaa;
   margin: 1rem 0;
+  overflow: auto;
   padding: 1rem;
 }
 
@@ -44,7 +45,7 @@ main {
   clear: both;
   font-style: italic;
   .required {
-    color: red;
+    color: $red;
   }
 }
 
@@ -122,5 +123,20 @@ main {
   @include media(790px) {
     @include span-columns(10);
     @include shift;
+  }
+}
+
+.event_info {
+  @include media(790px) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+  .required { color: $red; }
+  ol {
+    list-style: lower-roman outside;
+    margin: 0 5rem 0 3rem;
+    li {
+      display: list-item;
+    }
   }
 }

@@ -1,4 +1,4 @@
-%h1 I'm the info page!
-%p Use me to talk about the process of collecting, reviewing, and selecting proposals.
-%p
-  = link_to "Submit a proposal!", proposals_path(@event)
+.event_info
+  != markdown @event.info
+  %p
+    = link_to "Submit a proposal!", proposals_path(@event)

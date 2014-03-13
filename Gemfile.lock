@@ -155,6 +155,7 @@ GEM
     rake (10.1.1)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (3.1.1)
     rubyzip (1.1.0)
     sass (3.3.0)
       rake
@@ -220,6 +221,7 @@ DEPENDENCIES
   pry
   rails (= 4.0.2)
   rails_12factor
+  redcarpet (~> 3.1.1)
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3
