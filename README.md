@@ -24,6 +24,8 @@ Information on the installation of Chromedriver may be found here:  https://code
 
 A recent PR added email capabilities via the Postmark gem, which requires a few environment variables to be set when the server is started. You'll need to add entries in .env for `POSTMARK_API_KEY`, `POSTMARK_SMTP_SERVER`, and `POSTMARK_INBOUND_ADDRESS` to use the emailing functionality.
 
-If you are one of the heroku collaborators, you can get these values from `heroku:config`. Otherwise, you'll have to create your own postmark account and generate your own values for those keys.
+If you are one of the heroku collaborators, you can get these values from `heroku config:get`. Otherwise, you'll have to create your own postmark account and generate your own values for those keys.
+
+Similarly, if you'd like to enable rollbar, the error reporting service we've chosen, you'll need to set ROLLBAR_ACCESS_TOKEN in the .env file using the values from heroku (either our setup if you're a collaborator or your own account).
 
 Use Foreman to start the web server and automatically load the .env variables by using `foreman start`.
