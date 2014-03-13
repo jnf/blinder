@@ -16,6 +16,15 @@ class Proposal < ActiveRecord::Base
     responses.where(question_id: question_ids)
   end
 
+  def get_email_address
+    # I hate this method.
+    # This exposes a fundamental weakness in my approach to this app. In the future,
+    # this will need a refactor so that contact information is collected at the proposal level
+    # rather than the blind level (or maybe through user accounts).
+    q_id = event.questions.where(label: "Email Address").first.id
+    responses.where(question_id: q_id).first.value
+  end
+
   protected
 
   def generate_slug
