@@ -6,14 +6,13 @@
     != "#{ mail_to "cfp@steelcityruby.org", "CFP Team" }."
   %p
     Below is a copy of your submitted proposal. If you discover any errors or omissions, you can
-    = link_to "edit your proposal.", proposal_path(@proposal.slug)
-    The confirmation email will also include editing instructions. You're welcome to edit this proposal
-    until the CFP closes.
+    = link_to "edit your proposal.", proposal_url(@proposal.slug)
+    You're welcome to edit this proposal until the CFP closes.
 
 .review_proposal
   %h3= "Your proposal for #{ @proposal.event.title }"
 
-  - @blinds.each do |blind|
+  - @proposal.event.blinds.each do |blind|
     %section{ class: "blind" }
       %h4!= blind.title
       = render partial: 'review/response', collection: @proposal.responses_for(blind)

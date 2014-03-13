@@ -10,6 +10,7 @@ gem 'neat'
 gem 'awesome_print', '~> 1.1.0'
 gem 'acts_as_list'
 gem 'ffi', "= 1.9.0" #1.9.3 disagrees with heroku
+gem "foreman"
 
 gem 'omniauth', '~> 1.2.1'
 gem 'omniauth-github', '~> 1.1.1'
@@ -30,6 +31,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem "postmark-rails", "~> 0.6.0"
 end
 
 # Use ActiveModel has_secure_password

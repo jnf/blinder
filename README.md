@@ -19,3 +19,11 @@ For the time being, Cucumber is configured to launch whatever the default browse
 If your default browser happens to be Chrome, launching Cucumber will not work for you unless you install Chromedriver.
 
 Information on the installation of Chromedriver may be found here:  https://code.google.com/p/selenium/wiki/ChromeDriver
+
+## Generating a .env for use with Foreman
+
+A recent PR added email capabilities via the Postmark gem, which requires a few environment variables to be set when the server is started. You'll need to add entries in .env for `POSTMARK_API_KEY`, `POSTMARK_SMTP_SERVER`, and `POSTMARK_INBOUND_ADDRESS` to use the emailing functionality.
+
+If you are one of the heroku collaborators, you can get these values from `heroku:config`. Otherwise, you'll have to create your own postmark account and generate your own values for those keys.
+
+Use Foreman to start the web server and automatically load the .env variables by using `foreman start`.
