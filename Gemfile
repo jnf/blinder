@@ -16,6 +16,8 @@ gem "postmark-rails", "~> 0.6.0"
 gem 'omniauth', '~> 1.2.1'
 gem 'omniauth-github', '~> 1.1.1'
 
+gem 'newrelic_rpm', '~> 3.7.3.204'
+
 gem 'rollbar', '~> 0.12.13' # for error reporting
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
