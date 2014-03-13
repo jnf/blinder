@@ -30,7 +30,7 @@ Here's the basic timeline of how we will move from collecting proposals to annou
 ### Completing the CFP form
 Ok, so you get how the process works. The CFP form is broken into groups that reflect the
 blinding levels described above. Required fields are marked with a red asterisk
-(<span class="required">*</span>). After you submit your proposal, you'll receive both a browser and email confirmation of your submission. The confirmation contains a unique, private editing url for your proposal; you're welcome to edit your proposal until the CFP closes on __19 April 2014__.
+(<span class="required">*</span>). After you submit your proposal, you'll receive both a browser and email confirmation of your submission. The confirmation contains a unique, private editing URL for your proposal; you're welcome to edit your proposal until the CFP closes on __19 April 2014__.
 
 __If you have any problems or concerns with the form or the process, please reach out via email to cfp@steelcityruby.org. That address goes directly to SCRC organizers tasked with ensuring that everyone has the opportunity to participate in this process and who have recused themselves from the blinded rounds of review.__
 
