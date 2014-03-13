@@ -1,3 +1,5 @@
+require 'postmark'
+
 class CollectController < ApplicationController
   def home
     @event = Event.first
@@ -17,6 +19,7 @@ class CollectController < ApplicationController
     @proposal.responses.build(params[:responses])
 
     if @proposal.save
+      send_confirmation_email
       redirect_to thanks_path @proposal.slug
     else
       @errors = @proposal.errors.messages
@@ -50,6 +53,7 @@ class CollectController < ApplicationController
     end
 
     if @proposal.save
+      send_confirmation_email
       redirect_to thanks_path @proposal.slug
     else
       @errors = @proposal.errors.messages
@@ -64,13 +68,22 @@ class CollectController < ApplicationController
 
   def thanks
     @proposal = Proposal.includes(event: { blinds: :questions }).find_by_slug params[:slug]
-    @blinds = @proposal.event.blinds
   end
 
   protected
 
   def proposal_create_params
     params.permit(:event_id, :slug, :responses)
+  end
+
+  def send_confirmation_email
+    mailer = Postmark::ApiClient.new ENV['POSTMARK_API_KEY']
+    mailer.deliver from:      'cfp@steelcityruby.org',
+                   to:        @proposal.get_email_address,
+                   bcc:       'cfp@steelcityruby.org',
+                   subject:   "Thank you for submitting to #{ @proposal.event.title }!",
+                   tag:       'cfp-thanks',
+                   html_body: render_to_string(layout: false, template: "collect/thanks")
   end
 end
   
