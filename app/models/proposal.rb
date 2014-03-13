@@ -28,7 +28,12 @@ class Proposal < ActiveRecord::Base
   protected
 
   def generate_slug
-    self.slug = Digest::SHA1.hexdigest(Time.now.to_s + self.responses.sample.value)
+    seed = self.responses.any? ? self.responses.sample.value : random_seed
+    self.slug = Digest::SHA1.hexdigest(Time.now.to_s + seed)
     save!
+  end
+
+  def random_seed
+    %w(taco _elephant werewolf submarine fern5 trampoline satellite fight! window).sample
   end
 end
