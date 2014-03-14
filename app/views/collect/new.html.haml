@@ -13,4 +13,9 @@
       %h3.title!= blind.title
       %p.info!= blind.info
       = render blind.responses
+  %section{ class: "blind" }
+    .question.other
+      = label_tag "human_key", "To help us keep spam down, please enter '#{@event.human_key}' here.", class: 'required'
+      = text_field_tag "human_key"
+
   = f.submit
