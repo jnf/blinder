@@ -13,7 +13,7 @@ class Response < ActiveRecord::Base
 
   def required_field?
     if question.required? and value.blank?
-      errors.add(:required, "<span>#{question.label}</span> is a required field.".html_safe )
+      errors.add(:base, "<span>#{question.label}</span> is a required field.".html_safe )
     end
   end
 end

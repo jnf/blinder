@@ -1,6 +1,9 @@
 require 'postmark'
 
 class CollectController < ApplicationController
+
+  ROBOT_ERROR = "There was a problem validating your <span>human key</span>. Please try again.".html_safe
+
   def home
     @event = Event.first
   end
@@ -15,15 +18,17 @@ class CollectController < ApplicationController
   end
 
   def create
-    @proposal = Proposal.new(proposal_create_params)
+    @proposal   = Proposal.new(proposal_create_params)
+    @event      = Event.find(params[:event_id])
+    @is_a_human = @event.is_a_human?(params[:human_key])
+
     @proposal.responses.build(params[:responses])
 
-    if @proposal.save
+    if @is_a_human && @proposal.save
       send_confirmation_email
       redirect_to thanks_path @proposal.slug
     else
-      @errors = @proposal.errors.messages
-      @event = @proposal.event
+      add_errors
       @event.blinds.each do |blind|
         blind.posted_responses_for @proposal
       end
@@ -46,18 +51,20 @@ class CollectController < ApplicationController
   end
 
   def update
-    @proposal = Proposal.includes(:responses).find(params[:id])
+    @proposal   = Proposal.includes(:event, :responses).find(params[:id])
+    @event      = @proposal.event
+    @is_a_human = @event.is_a_human?(params[:human_key])
+
     @proposal.responses.each do |response|
       selected = params[:responses].find { |param| param[:id] == response.id.to_s }
       response.update(selected) if selected
     end
 
-    if @proposal.save
+    if @is_a_human && @proposal.save
       send_confirmation_email
       redirect_to thanks_path @proposal.slug
     else
-      @errors = @proposal.errors.messages
-      @event = @proposal.event
+      add_errors
       @event.blinds.each do |blind|
         blind.posted_responses_for @proposal
       end
@@ -71,6 +78,11 @@ class CollectController < ApplicationController
   end
 
   protected
+
+  def add_errors
+    @errors = @proposal.valid? ? { :"responses.base" => [] } : @proposal.errors.messages
+    @errors[:"responses.base"].push(ROBOT_ERROR) unless @is_a_human
+  end
 
   def proposal_create_params
     params.permit(:event_id, :slug, :responses)
@@ -86,4 +98,3 @@ class CollectController < ApplicationController
                    html_body: render_to_string(layout: false, template: "collect/thanks")
   end
 end
-  
