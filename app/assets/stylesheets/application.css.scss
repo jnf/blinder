@@ -49,6 +49,15 @@ main {
   }
 }
 
+/*this is for editing events*/
+.input {
+  textarea{
+    display:block;
+    width:100%;
+    height:25em;
+  }
+}
+
 .errors {
   border: 2px solid $red;
   margin: 1rem;
