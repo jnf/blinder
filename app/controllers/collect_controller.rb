@@ -2,7 +2,6 @@ require 'postmark'
 
 class CollectController < ApplicationController
 
-  before_filter  :reject_robots,   only: [:create, :update]
   ROBOT_ERROR = "There was a problem validating your <span>human key</span>. Please try again.".html_safe
 
   def home
@@ -19,6 +18,10 @@ class CollectController < ApplicationController
   end
 
   def create
+    @proposal   = Proposal.new(proposal_create_params)
+    @event      = Event.find(params[:event_id])
+    @is_a_human = @event.is_a_human?(params[:human_key])
+
     @proposal.responses.build(params[:responses])
 
     if @is_a_human && @proposal.save
@@ -48,6 +51,10 @@ class CollectController < ApplicationController
   end
 
   def update
+    @proposal   = Proposal.includes(:event, :responses).find(params[:id])
+    @event      = @proposal.event
+    @is_a_human = @event.is_a_human?(params[:human_key])
+
     @proposal.responses.each do |response|
       selected = params[:responses].find { |param| param[:id] == response.id.to_s }
       response.update(selected) if selected
@@ -72,18 +79,6 @@ class CollectController < ApplicationController
 
   protected
 
-  def reject_robots
-    if params[:event_id] #create action
-      @proposal = Proposal.new(proposal_create_params)
-      @event = Event.find(params[:event_id])
-    else #update action
-      @proposal = Proposal.includes(:event, :responses).find(params[:id])
-      @event = @proposal.event
-    end
-
-    @is_a_human = params[:human_key] === @event.human_key
-  end
-
   def add_errors
     @errors = @proposal.valid? ? { :"responses.base" => [] } : @proposal.errors.messages
     @errors[:"responses.base"].push(ROBOT_ERROR) unless @is_a_human
@@ -103,4 +98,3 @@ class CollectController < ApplicationController
                    html_body: render_to_string(layout: false, template: "collect/thanks")
   end
 end
-  
