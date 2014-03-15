@@ -14,4 +14,13 @@
       %ul
         - event.blinds.by_level.each do |blind|
           %li!= "#{blind.level}: #{blind.title}"
+    .input
+      = f.label :expired
+      = f.label :expired, "True", :value => "true"
+      = f.radio_button :expired, true
+      = f.label :expired, "False", :value => "false"
+      = f.radio_button :expired, false
+    .input
+      = f.label :expiration_date
+      = f.date_select :expiration_date
   = f.submit

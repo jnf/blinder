@@ -4,7 +4,7 @@ class ControlController < ApplicationController
   before_filter :has_access?
 
   def index
-    @events = Event.order(:title)
+    @events = Event.where("expired = 'f'").order(:title)
   end
 
   def edit
@@ -20,6 +20,6 @@ class ControlController < ApplicationController
   protected
 
   def event_update_params
-    params.permit(event: [:title, :info, :blind_level])
+    params.permit(event: [:title, :info, :blind_level, :expired, :expiration_date])
   end
 end

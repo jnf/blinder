@@ -1,4 +1,7 @@
 .event_info
   != markdown @event.info
   %p
-    = link_to "Submit a proposal!", proposals_path(@event)
+    - if @event.expired? or @event.expiration_date.past?
+      Sorry we are closed!
+    - else
+      = link_to "Submit a proposal!", proposals_path(@event)
