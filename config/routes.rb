@@ -1,7 +1,7 @@
 Blinder::Application.routes.draw do
   root 'collect#home'
-  # get  'review/:event_id/proposal/:proposal_id' => 'review#detailed', as: :review
-  # get  'review/:event_id' => 'review#list', as: :list
+  get  'review/:event_id/proposal/:proposal_id' => 'review#detailed', as: :review
+  get  'review/:event_id' => 'review#list', as: :list
 
   # omniauth provider callback for github auth
   get 'auth/:provider/callback', to: 'sessions#create'
