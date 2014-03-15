@@ -19,6 +19,7 @@ class UserCans
     include Can
 
     can :control
+    can :"control::events"
     can :review
 
   end
