@@ -190,15 +190,15 @@ ol,
 ul {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
+
+ul { list-style: none; }
+ol { list-style: decimal-leading-zero inside; }
+
 li {
-  display: block;
+  display: list-item;
   margin: 0;
   padding: 0;
-
-  ol,
-  ul {}
 }
 
 dl {

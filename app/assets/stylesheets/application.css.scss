@@ -153,8 +153,14 @@ main {
   ol {
     list-style: lower-roman outside;
     margin: 0 5rem 0 3rem;
-    li {
-      display: list-item;
-    }
+  }
+}
+
+.proposal_list {
+  .slug {
+    @include type-code;
+  }
+  h4 {
+    margin: 0 0 1rem;
   }
 }
