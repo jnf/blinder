@@ -4,7 +4,7 @@ class ControlController < ApplicationController
   before_filter :has_access?
 
   def index
-    @events = Event.active.order(:title)
+    @events = Event.order(:title)
   end
 
   def edit
