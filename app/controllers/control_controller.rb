@@ -4,7 +4,7 @@ class ControlController < ApplicationController
   before_filter :has_access?
 
   def index
-    @events = Event.where("expired = 'f'").order(:title)
+    @events = Event.active.order(:title)
   end
 
   def edit
