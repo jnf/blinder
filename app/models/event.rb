@@ -9,7 +9,8 @@ class Event < ActiveRecord::Base
   scope :inactive, -> { where(active: false) }
 
   def expired?
-    expires.past? unless expires.nil?
+    return false if expires.nil?
+    expires.past?
   end
 
   def is_a_human?(key)

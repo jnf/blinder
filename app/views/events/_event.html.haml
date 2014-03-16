@@ -16,11 +16,11 @@
           %li!= "#{blind.level}: #{blind.title}"
     .input
       = f.label :active
-      = f.label :active, "True", :value => "true"
-      = f.radio_button :active, true
-      = f.label :active, "False", :value => "false"
-      = f.radio_button :active, false
-    .input
+      = f.check_box :active
+    #expirable.input
+      = f.label :expirable, 'Disable by Date'
+      = f.check_box :expirable, :checked => !@event.expires.nil?
+    #expires.input
       = f.label :expires
       = f.date_select :expires
   = f.submit
