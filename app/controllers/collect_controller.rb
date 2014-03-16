@@ -10,8 +10,8 @@ class CollectController < ApplicationController
 
   def new
     @event = Event.includes(blinds: :questions).find(params[:event_id])
-    redirect_to root_path if !@event.active? or @event.expired?
-    
+    redirect_to root_path if !@event.active? or @event.expired? # I don't know if root_path is best
+
     @proposal = Proposal.new
 
     @event.blinds.each do |blind|
