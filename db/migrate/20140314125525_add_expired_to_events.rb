@@ -1,5 +1,5 @@
 class AddExpiredToEvents < ActiveRecord::Migration
   def change
-    add_column :events, :expired, :boolean, default: false
+    add_column :events, :active, :boolean, default: false
   end
 end

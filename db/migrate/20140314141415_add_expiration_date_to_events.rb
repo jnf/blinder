@@ -1,5 +1,5 @@
 class AddExpirationDateToEvents < ActiveRecord::Migration
   def change
-    add_column :events, :expiration_date, :datetime
+    add_column :events, :expires, :datetime
   end
 end
