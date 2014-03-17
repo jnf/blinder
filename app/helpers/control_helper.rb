@@ -1,6 +1,7 @@
 module ControlHelper
   def event_list(events)
     events.map { |event| content_tag :li, link_to(event.title, edit_event_path(event)) }.reduce &:+
+    
     events.map do |event|
       content_tag :li, link_to( event.title, edit_event_path(event) ) + " #{event_state(event)}"
     end.reduce &:+
