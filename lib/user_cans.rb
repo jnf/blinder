@@ -5,12 +5,10 @@ class UserCans
   end
 
   class Default
-    @@roles = {}
     include Can
   end
 
   class Admin
-    @@roles = {}
     include Can
 
     can :control
@@ -19,7 +17,6 @@ class UserCans
   end
 
   class Reviewer
-    @@roles = {}
     include Can
 
     can :review
