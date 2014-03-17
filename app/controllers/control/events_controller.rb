@@ -13,6 +13,12 @@ class Control::EventsController < ControlController
     redirect_to action: :index
   end
 
+  def proposals
+    @event = Event.find(params[:id])
+    # unsafe = @event.proposals.unsafe
+    # safe = @event.proposals.safe
+  end
+
   protected
 
   def event_update_params

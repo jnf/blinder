@@ -18,6 +18,9 @@ Blinder::Application.routes.draw do
 
   namespace :control do
     resources :events, only: [:index, :edit, :update] do
+      member do
+        get 'proposals'
+      end
     end
   end
 end
