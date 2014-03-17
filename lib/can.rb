@@ -1,31 +1,24 @@
 module Can
-
   def self.included(base)
     base.extend(ClassMethods)
   end
 
   module ClassMethods
-
-    def can sym=nil, allow=true
-
+    def can(sym=nil, allow=true)
       return allows if sym.nil?
       roles = self.allows
       roles[sym] = allow
       allows= self.allows.merge(roles)
-
     end
 
-    def cannot sym=nil, allow=false
-
+    def cannot(sym=nil, allow=false)
       return allows if sym.nil?
       roles = self.allows
       roles[sym] = allow
       allows= self.allows.merge(roles)
-
     end
 
-
-    def can? sym
+    def can?(sym)
       class_variable_get(:@@roles)[sym] || false
     end
 
@@ -43,9 +36,8 @@ module Can
       class_variable_get(:@@roles)
     end
 
-    def allows= hash
+    def allows=(hash)
       class_varaible_set :@@roles , hash
     end
-
   end
 end
