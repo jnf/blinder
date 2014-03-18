@@ -13,6 +13,7 @@ class UserCans
 
     can :control
     can :"control::events"
+    can :"control::proposals"
     can :review
   end
 
