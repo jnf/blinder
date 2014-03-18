@@ -5,7 +5,9 @@
 
 %p.info
   %span.required *
-  indicates a required field
+  indicates a required field. You can use
+  = link_to "Markdown", "http://whatismarkdown.com/", target: "_blank"
+  to add formatting to your submission!
 
 = form_for @proposal do |f|
   - @event.blinds.each do |blind|
