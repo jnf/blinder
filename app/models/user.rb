@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :notes
 
   USER_ROLES=[
     'admin',

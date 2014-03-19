@@ -1,4 +1,5 @@
 %h1= "Proposal #{ @proposal.id }"
+= debug @notes
 - @blinds.each do |blind|
   %section{ class: "blind" }
     %h2!= blind.title

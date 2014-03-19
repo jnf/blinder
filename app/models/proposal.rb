@@ -2,6 +2,7 @@ require 'digest/sha1'
 
 class Proposal < ActiveRecord::Base
   has_many   :responses, autosave: true
+  has_many   :notes
   belongs_to :event
 
   after_create :generate_slug
