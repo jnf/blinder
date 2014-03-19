@@ -1,0 +1,14 @@
+%h2 Proposal Review
+- @proposal.event.blinds.each do |blind|
+  %section.blind.review
+    %h3!= blind.title
+    %p.info!= blind.info
+    = render partial: 'review/response', collection: blind.responses
+
+= form_for @proposal, url: control_event_proposal_path(@proposal.event, @proposal) do |f|
+  %section.question
+    = f.label :safe_for_review, "Is this proposal ready for review by the selection committee?"
+    %label.radio!= "#{ f.radio_button :safe_for_review, '0', checked: true } No"
+    %label.radio!= "#{ f.radio_button :safe_for_review, '1' } Yes"
+  %section
+    = f.submit

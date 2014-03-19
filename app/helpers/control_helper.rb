@@ -14,6 +14,6 @@ module ControlHelper
   end
 
   def proposals_link(event)
-    link_to 'Proposals', proposals_control_event_path(event)
+    link_to 'Proposals', control_event_proposals_path(event)
   end
 end

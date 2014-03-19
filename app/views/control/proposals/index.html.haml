@@ -1,0 +1,6 @@
+%h4= "Proposals for #{ @event.title }"
+%h5 Proposals needing review
+%ol.proposals= proposal_list @event, @unsafe
+
+%h5 Safe for Review Proposals
+%ol.proposals= proposal_list @event, @safe
