@@ -15,11 +15,13 @@ class UserCans
     can :"control::events"
     can :"control::proposals"
     can :review
+    can :notes
   end
 
   class Reviewer
     include Can
 
     can :review
+    can :notes
   end
 end

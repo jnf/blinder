@@ -16,6 +16,8 @@ Blinder::Application.routes.draw do
     patch  'edit/:id', action: :update
   end
 
+  resources :notes, only: [:create, :update]
+  
   namespace :control do
     resources :events, only: [:index, :edit, :update] do
       resources :proposals, only: [:index, :edit, :update], param: :proposal_id

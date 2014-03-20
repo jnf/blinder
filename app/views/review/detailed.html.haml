@@ -1,5 +1,14 @@
 %h1= "Proposal #{ @proposal.id }"
-= debug @notes
+#notes
+  %h4 Notes
+  = form_for @notes, remote: true do |f|
+    = f.hidden_field :id
+    = f.hidden_field :user_id, value: current_user.id
+    = f.hidden_field :proposal_id, value: @proposal.id
+    .note= f.text_area :content
+    .submit
+      .status
+      = f.submit "Save"
 - @blinds.each do |blind|
   %section{ class: "blind" }
     %h2!= blind.title
