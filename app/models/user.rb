@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
     note || Note.new
   end
 
+  def can?(do_something)
+    cans.can? do_something
+  end
+
   # This should not be used because we do not allow open registration
   # Use check_from_omniauth below
   def self.register_from_omniauth(auth)
@@ -36,4 +40,9 @@ class User < ActiveRecord::Base
     user
   end
 
+  protected
+  
+  def cans
+    cans = UserCans.find_for self
+  end
 end
