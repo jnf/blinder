@@ -21,11 +21,3 @@ class NotesController < ApplicationController
   end
 
 end
-
-def notes
-  if note.save
-    render json: { success: true, messages: [] }
-  else
-    render json: { success: false, messages: @note.errors.messages }
-  end
-end
