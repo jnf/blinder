@@ -29,6 +29,10 @@ class Proposal < ActiveRecord::Base
     responses.where(question_id: q_id).first.value
   end
 
+  def notes_for_user(user)
+    notes.where(user: user).first
+  end
+
   protected
 
   def generate_slug

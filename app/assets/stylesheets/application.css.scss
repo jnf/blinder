@@ -162,11 +162,25 @@ main {
 }
 
 .proposal_list {
+  h4 {
+    margin: 0 0 1rem;
+  }
+  li {
+    list-style-position: outside;
+    margin: .5rem 0 0 2rem;
+  }
+  span {
+    font-size: .8em;
+  }
   .slug {
     @include type-code;
   }
-  h4 {
-    margin: 0 0 1rem;
+  .updated {
+    color: #ccc;
+    display: block;
+  }
+  .notes {
+    font-style: italic;
   }
 }
 
@@ -180,6 +194,7 @@ main {
   .submit {
     padding: .25rem;
     overflow: auto;
+    background: #ccc;
   }
   h4 {
     background: $yellow;
@@ -202,5 +217,7 @@ main {
     width: 50%;
     font-size: .8rem;
     &.saving { color: $yellow; }
+    &.error  { color: $red; }
+    &.saved  { color: green; }
   }
 }
