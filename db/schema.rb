@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140314141415) do
+ActiveRecord::Schema.define(version: 20140315163438) do
 
   create_table "blinds", force: true do |t|
     t.integer  "level"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140314141415) do
     t.text     "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "safe_for_review", default: false
   end
 
   add_index "proposals", ["slug"], name: "index_proposals_on_slug"

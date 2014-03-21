@@ -9,6 +9,15 @@ main {
   padding: 1rem;
 }
 
+.collect--getStarted {
+  font-size: 1.25rem;
+  text-align: center;
+  a {
+    color: $red;
+    &:hover, &:active, &:visited { color: $red; }
+  }
+}
+
 .logo {
   display: block;
   width: 500px;
@@ -24,9 +33,14 @@ main {
   background: $white;
   border: 1px solid #bbb;
   box-shadow: 0 0 3px #aaa;
-  margin: 1rem 0;
+  margin: .25rem 0 1rem;
   overflow: auto;
   padding: 1rem;
+  width: 100%;
+}
+
+.user_nav {
+  text-align: right;
 }
 
 .blind {
@@ -144,8 +158,14 @@ main {
   ol {
     list-style: lower-roman outside;
     margin: 0 5rem 0 3rem;
-    li {
-      display: list-item;
-    }
+  }
+}
+
+.proposal_list {
+  .slug {
+    @include type-code;
+  }
+  h4 {
+    margin: 0 0 1rem;
   }
 }
