@@ -1,7 +1,6 @@
 .user_nav
   - if current_user
-    Signed in as
-    = current_user.name
+    = "Hi #{ current_user.name }!"
+    = link_to "Events", control_events_path
+    |
     = link_to "Sign out", signout_path, id: "sign_out", method: :delete
-  - else
-    = link_to "Sign in with Github", "/auth/github", id: "sign_in"

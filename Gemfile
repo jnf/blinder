@@ -15,13 +15,7 @@ gem "foreman"
 gem "postmark-rails", "~> 0.6.0"
 gem 'omniauth', '~> 1.2.1'
 gem 'omniauth-github', '~> 1.1.1'
-
 gem 'newrelic_rpm', '~> 3.7.3.204'
-
-gem 'rollbar', '~> 0.12.13' # for error reporting
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 1.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -36,10 +30,8 @@ end
 group :production do
   gem 'pg', '~> 0.17.1'
   gem 'rails_12factor'
+  gem 'rollbar', '~> 0.12.13' # for error reporting
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -55,7 +47,6 @@ gem 'watir-webdriver'
 
 group :test do
   gem 'cucumber-rails', :require => false
-  # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'headless'
 end
