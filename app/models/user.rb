@@ -1,10 +1,20 @@
 class User < ActiveRecord::Base
+  has_many :notes
 
   USER_ROLES=[
     'admin',
     'reviewer',
     'default'
   ]
+
+  def notes_for(proposal)
+    note = notes.where(proposal: proposal).first
+    note || Note.new
+  end
+
+  def can?(do_something)
+    cans.can? do_something
+  end
 
   # This should not be used because we do not allow open registration
   # Use check_from_omniauth below
@@ -30,4 +40,9 @@ class User < ActiveRecord::Base
     user
   end
 
+  protected
+  
+  def cans
+    UserCans.find_for self
+  end
 end

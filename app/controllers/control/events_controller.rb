@@ -1,10 +1,10 @@
 class Control::EventsController < ControlController
   def index
-    @events = Event.order(:title)
+    @events = Event.order(:title).decorate
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:id]).decorate
   end
 
   def update

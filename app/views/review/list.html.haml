@@ -4,4 +4,5 @@
     - @proposals.each do |proposal|
       %li
         = link_to proposal.slug[0,6], review_path(@event, proposal), class: 'slug'
-        = "updated: #{ last_updated proposal }"
+        %span.notes=  notes_for proposal
+        %span.updated= "updated: #{ last_updated proposal }"

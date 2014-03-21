@@ -2,6 +2,7 @@ require 'digest/sha1'
 
 class Proposal < ActiveRecord::Base
   has_many   :responses, autosave: true
+  has_many   :notes
   belongs_to :event
 
   after_create :generate_slug
@@ -26,6 +27,10 @@ class Proposal < ActiveRecord::Base
     # rather than the blind level (or maybe through user accounts).
     q_id = event.questions.where(label: "Email Address").first.id
     responses.where(question_id: q_id).first.value
+  end
+
+  def notes_for_user(user)
+    notes.where(user: user).first
   end
 
   protected

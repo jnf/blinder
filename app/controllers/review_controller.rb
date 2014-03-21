@@ -11,6 +11,7 @@ class ReviewController < ApplicationController
   def detailed
     redirect_to list_path unless params[:proposal_id]
     @proposal = Proposal.includes(responses: :question).find(params[:proposal_id])
+    @notes    = current_user.notes_for @proposal
     @event    = Event.find params[:event_id]
     
     @blinds = Blind.visible_for(@event)

@@ -162,10 +162,62 @@ main {
 }
 
 .proposal_list {
+  h4 {
+    margin: 0 0 1rem;
+  }
+  li {
+    list-style-position: outside;
+    margin: .5rem 0 0 2rem;
+  }
+  span {
+    font-size: .8em;
+  }
   .slug {
     @include type-code;
   }
+  .updated {
+    color: #ccc;
+    display: block;
+  }
+  .notes {
+    font-style: italic;
+  }
+}
+
+#notes {
+  background: $white;
+  position: fixed;
+  right: 1rem;
+  bottom: 0;
+  border: 1px solid #222;
+  width: 20rem;
+  .submit {
+    padding: .25rem;
+    overflow: auto;
+    background: #ccc;
+  }
   h4 {
-    margin: 0 0 1rem;
+    background: $yellow;
+    cursor: pointer;
+    border-bottom: 2px solid #222;
+    padding: .25rem;
+  }
+  textarea {
+    width: 100%;
+    display: block;
+    height: 8rem;
+    padding: .25rem;
+  }
+  input[type=submit] {
+    display: block;
+    float: right;
+  }
+  .status {
+    float: left;
+    width: 50%;
+    font-size: .8rem;
+    &.saving { color: $yellow; }
+    &.error  { color: $red; }
+    &.saved  { color: green; }
   }
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315163438) do
+ActiveRecord::Schema.define(version: 20140319003835) do
 
   create_table "blinds", force: true do |t|
     t.integer  "level"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 20140315163438) do
     t.string   "human_key",   default: "I am a human."
     t.boolean  "active",      default: false
     t.datetime "expires_at"
+  end
+
+  create_table "notes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "proposal_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "proposals", force: true do |t|

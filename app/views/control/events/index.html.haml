@@ -1,2 +1,8 @@
 %h4 Events
-%ol.events= event_list @events
+%ol.events
+  - @events.each do |event|
+    %li
+      = event.title
+      = event.edit_link
+      = event.proposals_link
+      = event.state_list
