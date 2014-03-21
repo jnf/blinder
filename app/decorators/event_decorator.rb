@@ -10,4 +10,15 @@ class EventDecorator < Draper::Decorator
     active? and !expired?
   end
 
+  def proposals_link
+    h.link_to 'Proposals', h.control_event_proposals_path(object)
+  end
+
+  def edit_link
+    h.link_to 'Edit', h.edit_control_event_path(object)
+  end
+
+  def state_list
+    "#{ 'active' if active? } #{ 'expired' if expired? }"
+  end
 end

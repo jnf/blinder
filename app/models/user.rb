@@ -43,6 +43,6 @@ class User < ActiveRecord::Base
   protected
   
   def cans
-    cans = UserCans.find_for self
+    UserCans.find_for self
   end
 end
