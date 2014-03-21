@@ -1,7 +1,5 @@
 .event_info
   != markdown @event.info
   %p.collect--getStarted
-    - if @event.active? and !@event.expired?
-      = link_to "Submit a proposal!", proposals_path(@event)
-    - else
-      %b Submission closed!
+    = @event.submission_link
+

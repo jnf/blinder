@@ -5,12 +5,12 @@ class CollectController < ApplicationController
   ROBOT_ERROR = "There was a problem validating your <span>human key</span>. Please try again.".html_safe
 
   def home
-    @event = Event.first
+    @event = Event.first.decorate
   end
 
   def new
-    @event = Event.includes(blinds: :questions).find(params[:event_id])
-    redirect_to root_path if !@event.active? or @event.expired? # I don't know if root_path is best
+    @event = Event.includes(blinds: :questions).find(params[:event_id]).decorate
+    redirect_to root_path if !@event.can_propose? # I don't know if root_path is best
 
     @proposal = Proposal.new
 

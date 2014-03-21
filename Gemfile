@@ -15,6 +15,9 @@ gem "foreman"
 gem "postmark-rails", "~> 0.6.0"
 gem 'omniauth', '~> 1.2.1'
 gem 'omniauth-github', '~> 1.1.1'
+
+gem 'draper', '~>1.3'
+
 gem 'newrelic_rpm', '~> 3.7.3.204'
 
 group :doc do
