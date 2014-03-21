@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20140315163438) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "human_key",   default: "I am a human."
+    t.boolean  "active",      default: false
+    t.datetime "expires_at"
   end
 
   create_table "proposals", force: true do |t|

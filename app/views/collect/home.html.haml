@@ -1,4 +1,5 @@
 .event_info
   != markdown @event.info
   %p.collect--getStarted
-    = link_to "Submit a proposal!", proposals_path(@event)
+    = @event.submission_link
+
