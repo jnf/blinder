@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 20140314141415) do
     t.text     "info"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "human_key",   default: "I am a human."
-    t.boolean  "active",      default: false
+    t.string   "human_key",       default: "I am a human."
+    t.boolean  "expired",         default: false
+    t.datetime "expiration_date"
+    t.boolean  "active",          default: false
     t.datetime "expires"
   end
 
