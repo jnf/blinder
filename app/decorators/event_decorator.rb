@@ -7,7 +7,7 @@ class EventDecorator < Draper::Decorator
   end
 
   def can_propose?
-    true if active? and !expired?
+    active? and !expired?
   end
 
 end

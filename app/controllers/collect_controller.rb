@@ -10,7 +10,7 @@ class CollectController < ApplicationController
 
   def new
     @event = Event.includes(blinds: :questions).find(params[:event_id]).decorate
-    redirect_to root_path if !@event.can_propose? # I don't know if root_path is best
+    redirect_to root_path unless @event.can_propose? # I don't know if root_path is best
 
     @proposal = Proposal.new
 
