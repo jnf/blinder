@@ -19,8 +19,8 @@
       = f.check_box :active
     #expirable.input
       = f.label :expirable, 'Disable by Date'
-      = f.check_box :expirable, :checked => !@event.expires.nil?
+      = f.check_box :expirable, :checked => !@event.expires_at.nil?
     #expires.input
-      = f.label :expires
-      = f.date_select :expires
+      = f.label :expires_at
+      = f.date_select :expires_at
   = f.submit
