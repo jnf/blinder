@@ -17,7 +17,7 @@ class Control::EventsController < ControlController
   protected
 
   def event_update_params
-    params.permit(event: [:title, :info, :blind_level])
+    params.permit(event: [:title, :info, :blind_level, :active, :expires])
   end
 
   def clear_event_date key
