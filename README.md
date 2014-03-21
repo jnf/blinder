@@ -20,6 +20,10 @@ If your default browser happens to be Chrome, launching Cucumber will not work f
 
 Information on the installation of Chromedriver may be found here:  https://code.google.com/p/selenium/wiki/ChromeDriver
 
+## Oauth Setup
+
+[https://github.com/jnf/blinder/wiki/GitHub-Oauth](https://github.com/jnf/blinder/wiki/GitHub-Oauth)
+
 ## Generating a .env for use with Foreman
 
 A recent PR added email capabilities via the Postmark gem, which requires a few environment variables to be set when the server is started. You'll need to add entries in .env for `POSTMARK_API_KEY`, `POSTMARK_SMTP_SERVER`, and `POSTMARK_INBOUND_ADDRESS` to use the emailing functionality.
