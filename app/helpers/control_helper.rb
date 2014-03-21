@@ -28,4 +28,5 @@ module ControlHelper
   def event_state event
     states = [active_text(event), expired_text(event)].compact
     states.join ' '
+  end
 end
