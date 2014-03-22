@@ -1,6 +1,19 @@
 %h4= "Proposals for #{ @event.title }"
-%h5 Proposals needing review
-%ol.proposals= proposal_list @event, @unsafe
+.proposal_list
+  %h5 Proposals needing review
+  %ol.proposals
+    - @unsafe.each do |proposal|
+      %li
+        = link_to proposal.slug[0,6], edit_control_event_proposal_path(@event, proposal), class: 'slug'
+        %span.destroy= link_to '(destroy)', control_event_proposal_path(@event, proposal), method: :delete, confirm: "Destroy for realsies?"
+        %span.notes=  notes_for proposal
+        %span.updated= "updated: #{ last_updated proposal }"
 
-%h5 Safe for Review Proposals
-%ol.proposals= proposal_list @event, @safe
+.proposal_list
+  %h5 Safe for Review Proposals
+  %ol.proposals
+    - @safe.each do |proposal|
+      %li
+        = link_to proposal.slug[0,6], edit_control_event_proposal_path(@event, proposal), class: 'slug'
+        %span.notes=  notes_for proposal
+        %span.updated= "updated: #{ last_updated proposal }"

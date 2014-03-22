@@ -175,6 +175,9 @@ main {
   .slug {
     @include type-code;
   }
+  .destroy {
+    font-style: italic;    
+  }
   .updated {
     color: #ccc;
     display: block;

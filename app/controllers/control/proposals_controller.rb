@@ -7,6 +7,7 @@ class Control::ProposalsController < ControlController
 
   def edit
     @proposal = Proposal.includes(:responses, event: :questions).find params[:proposal_id]
+    @notes    = current_user.notes_for @proposal
     @proposal.event.blinds.each do |blind|
       blind.existing_responses_for @proposal
     end
@@ -23,5 +24,10 @@ class Control::ProposalsController < ControlController
       flash[:notice] = "Something went terribly wrong."
       redirect_to action: :edit
     end
+  end
+
+  def destroy
+    Proposal.find(params[:proposal_id]).destroy
+    redirect_to :back, notice: "Proposal destroyed!"
   end
 end

@@ -12,3 +12,5 @@
     %label.radio!= "#{ f.radio_button :safe_for_review, '1' } Yes"
   %section
     = f.submit
+
+#notes= render partial: 'shared/note_box', locals: { notes: @notes, proposal: @proposal }
