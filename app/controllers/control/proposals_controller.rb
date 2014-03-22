@@ -7,6 +7,7 @@ class Control::ProposalsController < ControlController
 
   def edit
     @proposal = Proposal.includes(:responses, event: :questions).find params[:proposal_id]
+    @notes    = current_user.notes_for @proposal
     @proposal.event.blinds.each do |blind|
       blind.existing_responses_for @proposal
     end
