@@ -24,4 +24,9 @@ class Control::ProposalsController < ControlController
       redirect_to action: :edit
     end
   end
+
+  def destroy
+    Proposal.find(params[:proposal_id]).destroy
+    redirect_to :back, notice: "Proposal destroyed!"
+  end
 end
