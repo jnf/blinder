@@ -6,7 +6,7 @@ class Control::ProposalsController < ControlController
   end
 
   def edit
-    @proposal = Proposal.includes(:responses, event: :questions).find params[:proposal_id]
+    @proposal = Proposal.includes(responses: :scrub, event: :questions).find params[:id]
     @notes    = current_user.notes_for @proposal
     @proposal.event.blinds.each do |blind|
       blind.existing_responses_for @proposal
@@ -14,7 +14,7 @@ class Control::ProposalsController < ControlController
   end
 
   def update
-    @proposal = Proposal.find params[:proposal_id]
+    @proposal = Proposal.find params[:id]
     @proposal.safe_for_review = params[:proposal][:safe_for_review]
 
     if @proposal.save
@@ -27,7 +27,20 @@ class Control::ProposalsController < ControlController
   end
 
   def destroy
-    Proposal.find(params[:proposal_id]).destroy
+    Proposal.find(params[:id]).destroy
     redirect_to :back, notice: "Proposal destroyed!"
   end
+
+  def scrub
+    scrub = Scrub.find_or_create_by(response_id: scrub_ajax_params[:scrub][:response_id])
+    scrub.update scrub_ajax_params[:scrub]
+    render json: { success: scrub.save, message: scrub.save_message }
+  end
+
+  protected
+
+  def scrub_ajax_params
+    params.permit(scrub: [:response_id, :blind_level, :value])
+  end
+
 end

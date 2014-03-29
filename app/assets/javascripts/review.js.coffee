@@ -6,7 +6,7 @@ $(document).ready ->
 
   $('#notes')
     .bind 'ajax:beforeSend', ->
-      $(this).find('.status').attr('class', 'status saving').html 'Saving. . .'
+      $(this).find('.status').attr('class', 'status saving').html 'Saving'
       $(this).find('input[type=submit]').attr('disabled', true)
 
     .bind 'ajax:complete', (event, data) ->
@@ -18,3 +18,13 @@ $(document).ready ->
 
       status.attr('class', "status #{statusClass}").html response.message
       submit.attr('disabled', false)
+
+  $('.scrubber')
+    .bind 'ajax:beforeSend', ->
+      $(this).find('.status').html 'Saving'
+      $(this).find('input[type=submit]').attr('disabled', true)
+
+    .bind 'ajax:complete', (event, data) ->
+      $(this).find('.status').html data.responseJSON.message
+      $(this).find('input[type=submit]').attr('disabled', false)
+

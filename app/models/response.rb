@@ -1,6 +1,8 @@
 class Response < ActiveRecord::Base
   belongs_to :proposal
-  belongs_to :question	
+  belongs_to :question
+  has_one    :scrub
+  
   before_save { |controller|  get_value_for_radio(self.value) unless (self.value.is_a? String) }
 
   validate :required_field?

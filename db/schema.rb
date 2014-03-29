@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140319003835) do
+ActiveRecord::Schema.define(version: 20140326221648) do
 
   create_table "blinds", force: true do |t|
     t.integer  "level"
@@ -67,6 +67,14 @@ ActiveRecord::Schema.define(version: 20140319003835) do
   create_table "responses", force: true do |t|
     t.integer  "proposal_id"
     t.integer  "question_id"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scrubs", force: true do |t|
+    t.integer  "response_id"
+    t.integer  "blind_level"
     t.text     "value"
     t.datetime "created_at"
     t.datetime "updated_at"

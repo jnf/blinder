@@ -2,6 +2,8 @@ Blinder::Application.routes.draw do
   root 'collect#home'
   get  'review/:event_id/proposal/:proposal_id' => 'review#detailed', as: :review
   get  'review/:event_id' => 'review#list', as: :list
+  post 'scrubs'  => 'control/proposals#scrub', as: :scrubs
+  patch 'scrubs' => 'control/proposals#scrub', as: :scrub
 
   # omniauth provider callback for github auth
   get 'auth/:provider/callback', to: 'sessions#create'
@@ -20,7 +22,7 @@ Blinder::Application.routes.draw do
   
   namespace :control do
     resources :events, only: [:index, :edit, :update] do
-      resources :proposals, only: [:index, :edit, :update, :destroy], param: :proposal_id
+      resources :proposals, except: [:create]
     end
   end
 end
