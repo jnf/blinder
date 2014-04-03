@@ -7,6 +7,10 @@ class Response < ActiveRecord::Base
 
   validate :required_field?
 
+  def scrubbed_at?(level)
+    scrub && scrub.blind_level > level
+  end
+
   protected
 
   def get_value_for_radio(value_hash)

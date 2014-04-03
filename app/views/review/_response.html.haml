@@ -2,5 +2,8 @@
   %h5
     = response.question.label
     = link_to_function '(scrub)', '$(this).parent().next(".scrubber").toggleClass("is-visible")' if current_user.can? :control
-  .question.scrubber= render partial: 'shared/scrub_form', locals: scrub_vars_for(response) if current_user.can? :control
-  .value!= markdown response.value
+  .question.scrubber
+    = render partial: 'shared/scrub_form', locals: scrub_vars_for(response) if current_user.can? :control
+
+  .value.scrubbed!= response.scrubbed_value
+  .value.original!= response.original_value
