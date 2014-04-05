@@ -6,7 +6,7 @@ class ResponseDecorator < Draper::Decorator
   end
 
   def scrubbed_value
-    scrub.blank? ? '' : h.markdown( scrub_marker + scrub.value )
+    scrub.blank? ? '' : scrub_marker << scrub.value
   end
 
   def original_value

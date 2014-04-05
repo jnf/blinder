@@ -157,7 +157,12 @@ main {
   }
 
   .value {
-    @include span-columns(12);
+    clear: both;
+    margin: 1rem;
+    &.scrubbed {
+      @include pad(1rem);
+      border: 2px dashed green;
+    }
   }
 }
 

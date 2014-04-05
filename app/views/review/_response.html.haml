@@ -5,5 +5,6 @@
   .question.scrubber
     = render partial: 'shared/scrub_form', locals: scrub_vars_for(response) if current_user.can? :control
 
-  .value.scrubbed!= response.scrubbed_value
-  .value.original!= response.original_value
+  - unless response.scrub.blank?
+    .value.scrubbed!=response.scrubbed_value
+  .value.original!=response.original_value

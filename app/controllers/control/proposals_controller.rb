@@ -34,7 +34,7 @@ class Control::ProposalsController < ControlController
   def scrub
     scrub = Scrub.find_or_create_by(response_id: scrub_ajax_params[:scrub][:response_id])
     scrub.update scrub_ajax_params[:scrub]
-    render json: { success: scrub.save, message: scrub.save_message }
+    render partial: 'review/response', locals: { response: scrub.response.decorate }
   end
 
   protected
