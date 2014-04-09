@@ -17,7 +17,7 @@ class Proposal < ActiveRecord::Base
 
   def responses_for(blind)
     question_ids = blind.questions.map &:id
-    responses.where(question_id: question_ids)
+    responses.where(question_id: question_ids).decorate
   end
 
   def get_email_address
