@@ -1,0 +1,8 @@
+= form_for scrub, remote: true do |f|
+  = f.hidden_field :response_id, value: response_id
+  = f.label :value, 'Scrubbed Response'
+  = f.text_area :value
+  = f.label :blind_level, 'Adjusted blind level'
+  = f.text_field :blind_level, value: (f.object.blind_level || passed_blind_level), class: 'small'
+  = f.submit "Scrub", class: 'small'
+  .small.status

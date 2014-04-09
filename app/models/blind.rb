@@ -8,6 +8,10 @@ class Blind < ActiveRecord::Base
 
   attr_accessor :responses
 
+  def decorated_responses
+    responses.map &:decorate
+  end
+
   def new_responses_for(proposal)
     @responses = questions.map { |question| Response.new question: question, proposal: proposal }
   end

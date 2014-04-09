@@ -3,6 +3,6 @@
   %section{ class: "blind" }
     %h2!= blind.title
     %p!= blind.info
-    = render partial: 'response', collection: blind.responses
+    = render partial: 'response', collection: blind.decorated_responses
 
 #notes= render partial: 'shared/note_box', locals: { notes: @notes, proposal: @proposal }
