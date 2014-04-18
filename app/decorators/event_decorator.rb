@@ -10,6 +10,10 @@ class EventDecorator < Draper::Decorator
     active? and !expired?
   end
 
+  def view_link
+    h.link_to 'View', h.event_path(object)
+  end
+
   def proposals_link
     h.link_to 'Proposals', h.control_event_proposals_path(object)
   end
