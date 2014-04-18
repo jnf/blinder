@@ -3,7 +3,7 @@ class EventDecorator < Draper::Decorator
 
   def submission_link
     return h.link_to "Submit a proposal!", h.proposals_path(object) if can_propose?
-    h.content_tag :b, "Submission closed!"
+    h.content_tag :b, "Submissions are closed!"
   end
 
   def can_propose?
@@ -20,5 +20,9 @@ class EventDecorator < Draper::Decorator
 
   def state_list
     "#{ 'active' if active? } #{ 'expired' if expired? }"
+  end
+
+  def time_sensitive_infos
+    h.markdown(can_propose? ? info : inactive_info)
   end
 end
