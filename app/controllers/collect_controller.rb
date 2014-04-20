@@ -10,7 +10,7 @@ class CollectController < ApplicationController
 
   def new
     @event = Event.includes(blinds: :questions).find(params[:event_id]).decorate
-    redirect_to root_path unless @event.can_propose? # I don't know if root_path is best
+    redirect_to root_path unless @event.can_propose?
 
     @proposal = Proposal.new
 
@@ -43,13 +43,13 @@ class CollectController < ApplicationController
     redirect_to root_path unless params[:slug]
 
     @proposal = Proposal.includes(responses: { question: :blind }).find_by_slug(params[:slug])
-    @event = @proposal.event
+    @event = @proposal.event.decorate
 
     @event.blinds.each do |blind|
       blind.existing_responses_for @proposal
     end
 
-    render action: :new
+    render action: @event.can_propose? ? :new : :home #lolhacky
   end
 
   def update
