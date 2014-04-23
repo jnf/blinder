@@ -26,7 +26,7 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'pg', '~> 0.17.1'
   gem 'pry'
 end
 
