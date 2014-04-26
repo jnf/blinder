@@ -33,3 +33,5 @@ $(document).ready ->
 
       status.attr('class', "status #{statusClass}").html response.message
       submit.attr('disabled', false)
+
+  $('.proposal_list table').tablesorter()

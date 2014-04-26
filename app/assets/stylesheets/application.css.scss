@@ -179,26 +179,56 @@ main {
 }
 
 .proposal_list {
-  h4 {
-    margin: 0 0 1rem;
+  h4 { margin: 0 0 1rem; }
+
+  table {
+    width: 100%;
+
+    th {
+      text-align: left;
+      border-bottom: 2px solid $color-text;
+      cursor: pointer;
+
+      &:before {
+        content: '◆ ';
+        font-size: 1rem;        
+      }
+
+      &.headerSortUp:before {
+        content: '▲ ';
+        font-size: .75rem;        
+      }
+
+      &.headerSortDown:before {
+        content: '▼ ';
+        font-size: .75rem;      
+      }
+    }
+
+    tbody {
+      tr:hover { background: #eee; }
+      td {
+        border-bottom: 1px solid #ccc;
+        padding: .5rem .75rem;
+      }
+    }
+
+    p { margin-bottom: 0; }
+
   }
-  li {
-    list-style-position: outside;
-    margin: .5rem 0 0 2rem;
-  }
-  span {
-    font-size: .8em;
-  }
+
   .slug {
     @include type-code;
   }
+
   .destroy {
-    font-style: italic;    
+    font-style: italic;
   }
+
   .updated {
     color: #ccc;
-    display: block;
   }
+
   .notes {
     font-style: italic;
   }

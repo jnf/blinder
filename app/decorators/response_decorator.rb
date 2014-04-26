@@ -5,6 +5,10 @@ class ResponseDecorator < Draper::Decorator
     object.proposal.event.blind_level
   end
 
+  def value_without_scrub_markers
+    scrub.blank? ? h.markdown(value) : h.markdown(scrub.value)
+  end
+
   def scrubbed_value
     scrub.blank? ? '' : scrub_marker << scrub.value
   end

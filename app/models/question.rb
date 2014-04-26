@@ -5,4 +5,6 @@ class Question < ActiveRecord::Base
 
   validates_presence_of :group, :if => Proc.new{ |question| question.kind == "radio" }
 
+  scope :sortable, -> { where(sortable: true) }
+
 end
