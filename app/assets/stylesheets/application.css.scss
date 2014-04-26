@@ -185,6 +185,18 @@ main {
   table {
     width: 100%;
   }
+  table th.sortable:before {
+    content: '◆';
+    font-size: 1.3rem;
+  }
+  table th.headerSortUp:before {
+    content: '▲';
+    font-size: 0.9rem;
+  }
+  table th.headerSortDown:before {
+    content: '▼';
+    font-size: 0.9rem;
+  }
   table tbody tr:hover {
     background: #eee;
   }
