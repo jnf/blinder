@@ -182,22 +182,33 @@ main {
   h4 {
     margin: 0 0 1rem;
   }
-  li {
-    list-style-position: outside;
-    margin: .5rem 0 0 2rem;
+  table {
+    width: 100%;
   }
-  span {
-    font-size: .8em;
+  table tbody tr:hover {
+    background: #eee;
+  }
+  table th {
+    text-align: left;
+    border-bottom: 2px solid $color-text;
+  }
+  table th, table td {
+    padding: 9px 8px;
+  }
+  table td {
+    border-bottom: 1px solid #ccc;
+  }
+  table p {
+    margin-bottom: 0;
   }
   .slug {
     @include type-code;
   }
   .destroy {
-    font-style: italic;    
+    font-style: italic;
   }
   .updated {
     color: #ccc;
-    display: block;
   }
   .notes {
     font-style: italic;
