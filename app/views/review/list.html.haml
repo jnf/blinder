@@ -7,6 +7,8 @@
           Slug
         %th
           Notes
+        - @sortable_questions.each do |question|
+          %th= question.label
         %th
           Updated
     %tbody
@@ -15,4 +17,7 @@
           %td
             = link_to proposal.slug[0,6], review_path(@event, proposal), class: 'slug'
           %td.notes=  notes_for proposal
+          - @sortable_questions.each do |question|
+            - response = proposal.response_for_question(question)
+            %td!= markdown response.value
           %td.updated= last_updated proposal
