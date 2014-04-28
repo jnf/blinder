@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418214011) do
+ActiveRecord::Schema.define(version: 20140426140043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20140418214011) do
     t.integer  "position"
     t.boolean  "required",   default: true
     t.text     "group"
+    t.boolean  "sortable",   default: false
   end
 
   create_table "responses", force: true do |t|
