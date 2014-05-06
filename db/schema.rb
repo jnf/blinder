@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140426140043) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "blinds", force: true do |t|
     t.integer  "level"
     t.integer  "event_id"
@@ -51,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140426140043) do
     t.boolean  "safe_for_review", default: false
   end
 
-  add_index "proposals", ["slug"], name: "index_proposals_on_slug"
+  add_index "proposals", ["slug"], name: "index_proposals_on_slug", using: :btree
 
   create_table "questions", force: true do |t|
     t.integer  "blind_id"
