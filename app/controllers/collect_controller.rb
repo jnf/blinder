@@ -5,11 +5,11 @@ class CollectController < ApplicationController
   ROBOT_ERROR = "There was a problem validating your <span>human key</span>. Please try again.".html_safe
 
   def home
-    @event = (params[:event_id] ? Event.find(params[:event_id]) : Event.first).decorate
+    @event = Event.where(slug: params[:event_slug]).first.decorate
   end
 
   def new
-    @event = Event.includes(blinds: :questions).find(params[:event_id]).decorate
+    @event = Event.includes(blinds: :questions).where(slug: params[:event_slug]).first.decorate
     redirect_to root_path unless @event.can_propose?
 
     @proposal = Proposal.new
@@ -21,7 +21,9 @@ class CollectController < ApplicationController
 
   def create
     @proposal   = Proposal.new(proposal_create_params)
-    @event      = Event.find(params[:event_id])
+    @event      = Event.where(slug: params[:event_slug]).first
+    @proposal.event = @event
+
     @is_a_human = @event.is_a_human?(params[:human_key])
 
     @proposal.responses.build(params[:responses])

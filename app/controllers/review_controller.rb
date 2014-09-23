@@ -1,19 +1,19 @@
 class ReviewController < ApplicationController
   include HasAccess
-  before_filter :authenticate!
-  before_filter :has_access?
+  before_filter :authenticate!, :has_access?
 
   def list
-    @event              = Event.find params[:event_id]
+    @event              = Event.where(slug: params[:event_slug]).first
     @proposals          = Proposal.for_event @event
     @sortable_questions = @event.questions.sortable
   end
 
   def detailed
     redirect_to list_path unless params[:proposal_id]
+
     @proposal = Proposal.includes(responses: :question).find(params[:proposal_id])
     @notes    = current_user.notes_for @proposal
-    @event    = Event.find params[:event_id]
+    @event    = Event.where(slug: params[:event_slug]).first
 
     @blinds = Blind.visible_for(@event)
     @blinds.each do |blind|

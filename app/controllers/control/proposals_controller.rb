@@ -1,6 +1,6 @@
 class Control::ProposalsController < ControlController
   def index
-    @event  = Event.find params[:event_id]
+    @event  = Event.where(slug: params[:event_slug]).first
     @unsafe = @event.proposals.unsafe
     @safe   = @event.proposals.safe
   end

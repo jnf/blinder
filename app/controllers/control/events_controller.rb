@@ -4,11 +4,11 @@ class Control::EventsController < ControlController
   end
 
   def edit
-    @event = Event.find(params[:id]).decorate
+    @event = Event.where(slug: params[:slug]).first.decorate
   end
 
   def update
-    event = Event.find(params[:id])
+    event = Event.where(slug: params[:slug]).first
     clear_event_date :expires_at if params[:event][:expirable] == '0'
     event.update_attributes(event_update_params[:event])
     redirect_to action: :index
