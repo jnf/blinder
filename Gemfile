@@ -15,6 +15,7 @@ gem "foreman"
 gem "postmark-rails", "~> 0.6.0"
 gem 'omniauth', '~> 1.2.1'
 gem 'omniauth-github', '~> 1.1.1'
+gem 'pg', '~> 0.17.1'
 
 gem 'draper', '~>1.3'
 
@@ -26,12 +27,10 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'pg', '~> 0.17.1'
   gem 'pry'
 end
 
 group :production do
-  gem 'pg', '~> 0.17.1'
   gem 'rails_12factor'
   gem 'rollbar', '~> 0.12.13' # for error reporting
 end

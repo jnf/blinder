@@ -2,6 +2,7 @@
 event = Event.create title: 'Steel City Ruby 2014 CFP',
   blind_level: 0,
   human_key: "SCRC",
+  slug: "SCRC2014"
   info: File.read('db/texts/event_info.md')
 
 personal_info = Blind.create event: event,
