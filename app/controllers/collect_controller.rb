@@ -5,7 +5,11 @@ class CollectController < ApplicationController
   ROBOT_ERROR = "There was a problem validating your <span>human key</span>. Please try again.".html_safe
 
   def home
-    @event = Event.where(slug: params[:event_slug]).first.decorate
+    if params[:event_slug]
+      @event = Event.where(slug: params[:event_slug]).first.decorate
+    else
+      @event = Event.active.first.decorate
+    end
   end
 
   def new
