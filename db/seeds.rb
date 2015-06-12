@@ -1,8 +1,8 @@
 # Core Event & associated Blinds
-event = Event.create title: 'Steel City Ruby 2014 CFP',
+event = Event.create title: 'Open Source & Feelings 2015 CFP',
   blind_level: 0,
-  human_key: "SCRC",
-  slug: "SCRC2014",
+  human_key: "OSF",
+  slug: "OSF2015",
   info: File.read('db/texts/event_info.md')
 
 personal_info = Blind.create event: event,
@@ -62,9 +62,8 @@ Question.create blind: balancing_info, required: false, label: "At which other c
 
 # Admin users
 admins = [
-  { uid: 27784,  name: 'Jeremy Flores' },
-  { uid: 159591, name: 'Paul Scarrone' },
-  { uid: 553936, name: 'Chris Geihsler' }
+  { uid: 27784,  name: '<3Jeremy!' },
+  { uid: 1103618, name: 'Whitney'}
 ]
 
 admins.each do |admin|
@@ -73,17 +72,7 @@ end
 
 # Review users
 reviewers = [
-  { uid: 150839,  name: 'Justin Reese' },
-  { uid: 197224,  name: 'Colin Dean' },
-  { uid: 193874,  name: 'Carol Nichols' },
-  { uid: 45143,   name: 'Daniel Buch' },
-  { uid: 22186,   name: 'Justin Geibel' },
-  { uid: 225823,  name: 'Bruce Adams' },
-  { uid: 38176,   name: 'Marylou Lenhart' },
-  { uid: 1543891, name: 'Jared Wilkerson' },
-  { uid: 1873205, name: 'Zack Mance' },
-  { uid: 1133473, name: 'Corey Purcell' },
-  { uid: 1461735, name: 'Jean Lange' }
+  { uid: 193874,  name: 'Carol Nichols' }
 ]
 
 reviewers.each do |reviewer|
