@@ -30,6 +30,7 @@ class CollectController < ApplicationController
 
     @is_a_human = @event.is_a_human?(params[:human_key])
 
+    params.permit! # this is a terrible idea; someone please do this right.
     @proposal.responses.build(params[:responses])
 
     if @is_a_human && @proposal.save
@@ -98,9 +99,9 @@ class CollectController < ApplicationController
 
   def send_confirmation_email
     mailer = Postmark::ApiClient.new ENV['POSTMARK_API_KEY']
-    mailer.deliver from:      'cfp@steelcityruby.org',
+    mailer.deliver from:      'hello@opensourceandfeelings.com',
                    to:        @proposal.get_email_address,
-                   bcc:       'cfp@steelcityruby.org',
+                   bcc:       'hello@opensourceandfeelings.com',
                    subject:   "Thank you for submitting to #{ @proposal.event.title }!",
                    tag:       'cfp-thanks',
                    html_body: render_to_string(layout: false, template: "collect/thanks")
