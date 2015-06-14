@@ -3,13 +3,19 @@ $yellow: #ffcc2f;
 $black:  #171d1e;
 $white:  #fff;
 $red:    rgb(221,55,22);
-$color-text: #222;
+$color-text: #1c3a4a;
+
+// OSF colors
+$pink: #cd499a;
+$blue: #5398be;
+$purple: #3b2870;
+$blue-light: #2f617c;
 
 
 //Mixins
 @mixin type-body {
   color: $color-text;
-  font: normal normal 16px/1.4 "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font: normal normal 16px/1.4 "Lato", Helvetica, sans-serif;
 }
 
 @mixin type-code {
