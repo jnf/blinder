@@ -4,6 +4,7 @@ $black:  #171d1e;
 $white:  #fff;
 $red:    rgb(221,55,22);
 $color-text: #1c3a4a;
+$pink: #cd499a;
 
 // OSF colors
 $pink: #cd499a;
@@ -22,4 +23,25 @@ $blue-light: #2f617c;
 @mixin type-code {
   font: normal normal 1rem "Courier New", Courier, sans-serif;
   font-weight: 300;
+}
+
+@mixin buttonesque {
+  transition: all 0.15s ease-out 0s;
+  background: $pink;
+  border: 0;
+  border-radius: 6px;
+  color: $white;
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 13rem;
+
+  &:active,
+  &:hover {
+    background: darken($pink, 10%);
+    color: $white;
+    text-decoration: none;
+    transition: all 0.15s ease-out 0s;
+  }
 }
