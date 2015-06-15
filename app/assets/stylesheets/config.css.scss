@@ -16,8 +16,10 @@ $blue-light: #2f617c;
 @mixin type-body {
   color: $color-text;
   font: normal normal 16px/1.4 "Lato", Helvetica, sans-serif;
+  font-weight: 300;
 }
 
 @mixin type-code {
   font: normal normal 1rem "Courier New", Courier, sans-serif;
+  font-weight: 300;
 }
