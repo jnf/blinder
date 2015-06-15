@@ -1,6 +1,6 @@
 ## 2015 Call for Proposals (CFP)
 
-Greetings! We look forward to reviewing a wide range of proposals for presentations at Open Source & Feelings. The info on this page will help you prepare for submitting your proposal.
+Hello! We look forward to reviewing a wide range of proposals for presentations at Open Source & Feelings. The info on this page will help you prepare for submitting your proposal. You’ll find the link to the proposal form at the bottom of this page.
 
 ### About You
 
