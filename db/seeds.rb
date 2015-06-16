@@ -24,11 +24,11 @@ balancing_info = Blind.create event: event,
   info: "This information is not given to the selection committee until a late round in the selection process. It is used to provide contextual information about proposals and provides additional differentiation between similarly strong proposals.",
   position: 2
 
-# make_life_easier = Blind.create event: event,
-#   level: 10, #yeah. . . not really part of the evaluation process
-#   title: "Help Us Out",
-#   info: "This information is not used for talk selection, but it will to make our lives easier if your proposal is accepted. The members of the selection committee will not be given this information during the selection process.",
-#   position: 3
+speaker_accomodations = Blind.create event: event,
+  level: 10,
+  title: "Speaker Accomodations",
+  info: "Speakers will receive a complimentary ticket to Open Source & Feelings. As speakers ourselves, we understand the expense that speakers often incur. Unfortunately, we have limited ability to provide travel or hotel accommodations. Please, don't let that stop you from proposing a session. It is important that we be able to know all the great content we might miss so that we can highlight this fact to the sponsor and attendee communities.<br /><br />If your proposal is selected and travel expenses would prevent you from attending, we would like to work with you to help you attend the conference. Answering this optional question will help us get a better sense of the impact travel and housing costs have on speakers, and will not be used in our selection process.",
+  position: 3
 
 position = -1
 def position(reset = false)
@@ -62,6 +62,7 @@ Question.create blind: balancing_info, required: false, label: "Have you present
 Question.create blind: balancing_info, required: false, label: "Tell us about your experience with open source.", kind: "textarea", position: position
 Question.create blind: balancing_info, required: false, label: "Tell us about your involvement with your communities.", kind: "textarea", position: position
 
+Question.create blind: speaker_accomodations, required: false, label: "Will travel and lodging make attending Open Source & Feelings financially difficult?", kind: "text", position: position
 # User records for members of the selection committee
 
 # Admin users
