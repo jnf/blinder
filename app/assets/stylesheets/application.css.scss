@@ -11,10 +11,18 @@ main {
 
 .is-hidden { display: none; }
 
-.collect--getStarted {
-  font-size: 1.5rem;
-  text-align: center;
+.collect--getStarted a {
+  @include buttonesque;
+
+  margin: 1rem auto;
 }
+
+input.collect--submit { 
+  @include buttonesque;
+
+  margin-top: 2rem;
+}
+
 
 header {
   background: $purple;
@@ -80,7 +88,7 @@ footer {
 
 .info {
   clear: both;
-  font-style: italic;
+  font-weight: 400;
   .required {
     color: $red;
   }
@@ -192,11 +200,17 @@ footer {
     @include span-columns(10);
     @include shift(1);
   }
-  .required { color: $red; }
+
+  h3 {
+    padding-top: 1rem;
+  }
+
   ol {
     list-style: lower-roman outside;
     margin: 0 5rem 0 3rem;
   }
+
+  .required { color: $red; }
 }
 
 .proposal_list {

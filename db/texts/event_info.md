@@ -1,6 +1,6 @@
 ## 2015 Call for Proposals (CFP)
 
-Greetings! We look forward to reviewing a wide range of proposals for presentations at Open Source & Feelings. The info on this page will help you prepare for submitting your proposal.
+Hello! We look forward to reviewing a wide range of proposals for presentations at Open Source & Feelings. The info on this page will help you prepare for submitting your proposal. You’ll find the link to the proposal form at the bottom of this page.
 
 ### About You
 
@@ -36,7 +36,7 @@ _Personal &amp; Contact Information_:  __We will never share or publish any of y
 
 Here's the basic timeline of how we will move from collecting proposals to announcing the conference lineup:
 
-1. __Open &amp; Publicize the CFP:__ The CFP opens __Monday, 13 June 2015__. We will accept proposals through the end of __Tuesday, 7 July 2015__ (11:59pm Pacific Standard Time).
+1. __Open &amp; Publicize the CFP:__ The CFP opens __Monday, 15 June 2015__. We will accept proposals through the end of __Tuesday, 7 July 2015__ (11:59pm Pacific Standard Time).
 
 1. __Evaluate proposals__: Given the timeline we will begin reviewing submitted proposals on a rolling basis. The review process will proceed through phases. These phases are set up to both review presentation ideas on their own merits and also ensuring we get diverse ideas and speakers.
 
