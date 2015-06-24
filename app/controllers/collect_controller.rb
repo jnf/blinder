@@ -99,9 +99,9 @@ class CollectController < ApplicationController
 
   def send_confirmation_email
     mailer = Postmark::ApiClient.new ENV['POSTMARK_API_KEY']
-    mailer.deliver from:      'cfp@opensourceandfeelings.com',
+    mailer.deliver from:      ENV['CFP_FROM'],
                    to:        @proposal.get_email_address,
-                   bcc:       'cfp@opensourceandfeelings.com',
+                   bcc:       ENV['CFP_BCC'],
                    subject:   "Thank you for submitting to #{ @proposal.event.title }!",
                    tag:       'cfp-thanks',
                    html_body: render_to_string(layout: false, template: "collect/thanks")
