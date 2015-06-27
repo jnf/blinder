@@ -4,13 +4,13 @@ Hello! We look forward to reviewing a wide range of proposals for presentations 
 
 ### About You
 
-You have feelings. You care about open source. Maybe you have thoughts on how we can work better in our open source communities. Maybe you have thoughts on how our humanity impacts our OS work, or vice versa. Perhaps you've read through our wishlist and something caught your eye. When you heard about this conference you had an idea that you just knew would fit.
+You have feelings. You care about open source. Maybe you have thoughts on how we can work better in our open source communities. Maybe you have thoughts on how our humanity impacts our OS work, or vice versa. Perhaps you've read through [our wishlist](http://osfeels.com/talk-ideas) and something caught your eye. When you heard about this conference you had an idea that you just knew would fit.
 
 We look forward to broad diversity in our speakers, presentation formats, and topics.
 
 ### Topics
 
-We are interested in practical information that our participants can take back with them to their open source communities. We are interested in authentic presentations opening up needed conversations in the larger community. Our wishlist may be helpful to get the ideas flowing.
+We are interested in practical information that our participants can take back with them to their open source communities. We are interested in authentic presentations opening up needed conversations in the larger community. [Our wishlist](http://osfeels.com/talk-ideas) may be helpful to get the ideas flowing.
 
 ### Proposal Details
 
