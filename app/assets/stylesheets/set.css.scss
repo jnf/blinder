@@ -60,7 +60,8 @@ html {
 // Set margin (Normalize)
 body {
   min-width: 760px;
-  background: $yellow;
+  background: $white;
+  margin: 0;
 
   // Force load of adobe-blank on Windows Chrome (31/2)
   &:after {
@@ -95,12 +96,17 @@ body {
 // Set background (Normalize)
 a {
   background: transparent;
+  color: $purple;
+  text-decoration: none;
+  font-weight: normal;
 
   &:link {}
-  &:visited {}
+  &:visited { color: $purple; }
 
   &:hover,
-  &:focus {}
+  &:focus {
+    text-decoration: underline;
+  }
 
   // Set outline (Normalize)
   &:focus {
@@ -375,6 +381,7 @@ button,
 input,
 select,
 textarea {
+  color: $blue-light;
   margin: 0;
   padding: 0;
   font-size: 100%;
