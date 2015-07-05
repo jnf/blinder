@@ -65,7 +65,7 @@ class CollectController < ApplicationController
     @is_a_human = @event.is_a_human?(params[:human_key])
 
     @proposal.responses.each do |response|
-      selected = params[:responses].find { |param| param[:id] == response.id.to_s }
+      selected = response_update_params.find { |param| param[:id] == response.id.to_s }
       response.update(selected) if selected
     end
 
@@ -95,6 +95,10 @@ class CollectController < ApplicationController
 
   def proposal_create_params
     params.permit(:event_id, :slug, :responses)
+  end
+
+  def response_update_params
+    params.permit(responses: [:id, :question_id, :value]).require(:responses)
   end
 
   def send_confirmation_email
