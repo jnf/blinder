@@ -2,6 +2,8 @@
 
 Hello! We look forward to reviewing a wide range of proposals for presentations at Open Source & Feelings. The info on this page will help you prepare for submitting your proposal. You’ll find the link to the proposal form at the bottom of this page.
 
+**Note:** _Proposers will a 50% discount on their tickets. Speakers will receive free tickets._
+
 ### About You
 
 You have feelings. You care about open source. Maybe you have thoughts on how we can work better in our open source communities. Maybe you have thoughts on how our humanity impacts our OS work, or vice versa. Perhaps you've read through [our wishlist](http://osfeels.com/talk-ideas) and something caught your eye. When you heard about this conference you had an idea that you just knew would fit.
