@@ -8,7 +8,7 @@ class CollectController < ApplicationController
     if params[:event_slug]
       @event = Event.where(slug: params[:event_slug]).first.decorate
     else
-      @event = Event.active.first.decorate
+      @event = Event.active.any? ? Event.active.first.decorate : Event.last.decorate
     end
   end
 

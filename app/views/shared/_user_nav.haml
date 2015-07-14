@@ -3,6 +3,6 @@
     = "Hi #{ current_user.name }!"
     = link_to "Events", control_events_path if current_user.can? :control
     |
-    = link_to "Review", list_path(params[:event_slug] || Event.active.first.slug) if current_user.can? :review
+    = link_to "Review", list_path(params[:event_slug] || Event.last.slug) if current_user.can? :review
     |
     = link_to "Sign out", signout_path, id: "sign_out", method: :delete
