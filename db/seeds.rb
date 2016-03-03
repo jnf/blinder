@@ -1,5 +1,5 @@
 # Core Event & associated Blinds
-event = Event.create title: 'Open Source & Feelings 2015 CFP',
+event = Event.create title: 'Open Source & Feelings 2016 CFP',
   blind_level: 0,
   human_key: "OSF",
   slug: "OSF2016",
