@@ -2,7 +2,7 @@
 event = Event.create title: 'Open Source & Feelings 2015 CFP',
   blind_level: 0,
   human_key: "OSF",
-  slug: "OSF2015",
+  slug: "OSF2016",
   active: true,
   info: File.read('db/texts/event_info.md')
 
@@ -30,32 +30,46 @@ speaker_accomodations = Blind.create event: event,
   info: "Speakers will receive a complimentary ticket to Open Source & Feelings. As speakers ourselves, we understand the expense that speakers often incur. Unfortunately, we have limited ability to provide travel or hotel accommodations. Please, don't let that stop you from proposing a session. It is important that we be able to know all the great content we might miss so that we can highlight this fact to the sponsor and attendee communities.<br /><br />If your proposal is selected and travel expenses would prevent you from attending, we would like to work with you to help you attend the conference. Answering this optional question will help us get a better sense of the impact travel and housing costs have on speakers, and will not be used in our selection process.",
   position: 3
 
+make_life_easier = Blind.create event: event,
+  level: 10,
+  title: "Making Life Easier",
+  info: "If your proposal is selected, there are a few pieces of information we need to properly celebrate/publicise your talk. These items are optional, but they really do make our lives easier. :)",
+  position: 4
+
 position = -1
 def position(reset = false)
   position = -1 if reset
   position = position + 1
 end
 
+consent_label = <<-CONSENT
+Given the sensitive nature of many of our presentations, you may choose for your talk/presentation to not be recorded or distributed.
+Do you consent to OS&F recording and then distributing on the internet your talk/presentation at OS&F 2016?
+CONSENT
+
 # Questions for the Blinds!
 Question.create blind: personal_info, required: true, label: "Name", kind: "text", position: position(true)
 Question.create blind: personal_info, required: true, label: "Email Address", kind: "email", position: position
 Question.create blind: personal_info, required: true, label: "Phone Number", kind: "tel", position: position
-Question.create blind: personal_info, required: false, label: "Websites", kind: "text", position: position
-Question.create blind: personal_info, required: false, label: "Twitter", kind: "text", position: position
+Question.create blind: personal_info, required: true, label: consent_label, kind: "radio", values: "Yes,No", position: position, group: "recording_consent"
+Question.create blind: personal_info, required: false, label: "Preferred Pronouns", kind: "text", position: position
 Question.create blind: personal_info, required: false, label: "Age", kind: "text", position: position
 Question.create blind: personal_info, required: false, label: "Gender", kind: "text", position: position
 Question.create blind: personal_info, required: false, label: "Race/Ethnicity", kind: "text", position: position
+Question.create blind: personal_info, required: false, label: "Twitter", kind: "text", position: position
+Question.create blind: personal_info, required: false, label: "Websites", kind: "text", position: position
 Question.create blind: personal_info, required: false, label: "Anything else you'd like us to know?", kind: "textarea", position: position
 
-# Question.create blind: make_life_easier, required: true, label: "T-shirt cut", kind: "radio", values: "Mens,Womens", position: position, group: "shirt_cut"
-# Question.create blind: make_life_easier, required: true, label: "T-shirt size", kind: "radio", values: "XS,S,M,L,XL,2XL,3XL,4XL,5XL", position: position, group: "shirt_size"
-# Question.create blind: make_life_easier, required: true, label: "URL to a headshot or avatar", kind: "text", position: position(true)
 
 Question.create blind: talk_info, required: true, label: "Talk Title", kind: "text", position: position(true)
 Question.create blind: talk_info, required: true, label: "How long is your presentation (in minutes; 10-40 is average)?", kind: "text", position: position
 Question.create blind: talk_info, required: true, label: "Talk Abstract", kind: "textarea", position: position
 Question.create blind: talk_info, required: true, label: "Who's your ideal audience?", kind: "textarea", position: position
 Question.create blind: talk_info, required: true, label: "Why are you excited to talk about this at Open Source & Feelings?", kind: "textarea", position: position
+
+Question.create blind: make_life_easier, required: true, label: "T-shirt cut", kind: "radio", values: "Boxy,Fitted", position: position, group: "shirt_cut"
+Question.create blind: make_life_easier, required: true, label: "T-shirt size", kind: "radio", values: "XS,S,M,L,XL,2XL,3XL,4XL,5XL", position: position, group: "shirt_size"
+Question.create blind: make_life_easier, required: true, label: "URL to a headshot or avatar", kind: "text", position: position(true)
 
 Question.create blind: balancing_info, required: false, label: "Previous Speaking Experience", kind: "textarea", position: position(true)
 Question.create blind: balancing_info, required: false, label: "Have you presented on this topic at other events? If so, where and when?", kind: "textarea", position: position
@@ -68,7 +82,7 @@ Question.create blind: speaker_accomodations, required: false, label: "Will trav
 # Admin users
 admins = [
   { uid: 27784,  name: '<3Jeremy!' },
-  { uid: 1103618, name: 'Whitney'}
+  { uid: 257689, name: 'Kerri' }
 ]
 
 admins.each do |admin|
