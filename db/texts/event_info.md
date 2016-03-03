@@ -1,4 +1,4 @@
-## 2015 Call for Proposals (CFP)
+## 2016 Call for Proposals (CFP)
 
 Hello! We look forward to reviewing a wide range of proposals for presentations at Open Source & Feelings. The info on this page will help you prepare for submitting your proposal. You’ll find the link to the proposal form at the bottom of this page.
 
@@ -26,7 +26,7 @@ You must read and follow our [code of conduct](http://osfeels.com/conduct).
 
 ### Proposal Form
 
-The proposal form is divided into three sections, each used as criteria for acceptance:
+The proposal form is divided into four sections, each used as criteria for acceptance:
 
 _Talk Information_: is the primary data used during proposal evaluation and selection. Please help us avoid unconscious/unintentional bias by not including personally identifying information in this section, including gendered pronouns, websites, or company names.
 
@@ -34,11 +34,13 @@ _Balancing Information_: is used to provide contextual information about proposa
 
 _Personal &amp; Contact Information_:  __We will never share or publish any of your information without your explicit permission.__ If you are selected to be a presenter, we will contact you for permission to share some details (like your name and twitter handle) on the Open Source and Feelings website. Demographic information is optional and will only be used to support our goal of having a diverse and inclusive environment.
 
+_Making Life Easier_: The questions here only come into play if you are chosen to be a presenter. The information collected here does not factor into the selection process. Rather, it makes it easier for us to move forward with you as a speaker. We will be able to publicize and celebrate your selection, order swag earlier, and update our website as soon as you confirm your selection.
+
 ### Selection Process
 
 Here's the basic timeline of how we will move from collecting proposals to announcing the conference lineup:
 
-1. __Open &amp; Publicize the CFP:__ The CFP opens __Monday, 15 June 2015__. We will accept proposals through the end of __Monday, 13 July 2015__ (11:59pm Pacific Standard Time).
+1. __Open &amp; Publicize the CFP:__ The CFP opens __Monday, 15 June 2016__. We will accept proposals through the end of __Monday, 13 July 2016__ (11:59pm Pacific Standard Time).
 
 1. __Evaluate proposals__: Given the timeline we will begin reviewing submitted proposals on a rolling basis. The review process will proceed through phases. These phases are set up to both review presentation ideas on their own merits and also ensuring we get diverse ideas and speakers.
 
