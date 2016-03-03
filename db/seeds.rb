@@ -52,7 +52,7 @@ Question.create blind: personal_info, required: true, label: "Name", kind: "text
 Question.create blind: personal_info, required: true, label: "Email Address", kind: "email", position: position
 Question.create blind: personal_info, required: true, label: "Phone Number", kind: "tel", position: position
 Question.create blind: personal_info, required: true, label: consent_label, kind: "radio", values: "Yes,No", position: position, group: "recording_consent"
-Question.create blind: personal_info, required: false, label: "Preferred Pronouns", kind: "text", position: position
+Question.create blind: personal_info, required: false, label: "Pronouns", kind: "text", position: position
 Question.create blind: personal_info, required: false, label: "Age", kind: "text", position: position
 Question.create blind: personal_info, required: false, label: "Gender", kind: "text", position: position
 Question.create blind: personal_info, required: false, label: "Race/Ethnicity", kind: "text", position: position
