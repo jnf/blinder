@@ -51,5 +51,5 @@ Here's the basic timeline of how we will move from collecting proposals to annou
 Required fields are marked with a red asterisk
 (<span class="required">*</span>). After you submit your proposal, you'll receive both a browser and email confirmation of your submission.
 
-__If you have any problems or concerns with the form or the process, please reach out via email to [cfp@osfeels.com](mailto:cfp@osfeels.com). That address goes directly to OSFeels organizers tasked with ensuring that everyone has the opportunity to participate in this process and who have recused themselves from the blinded rounds of review.__
+__If you have any problems or concerns with the form or the process, please reach out via email to [cfp@osfeels.com](mailto:cfp@osfeels.com). That address goes directly to OSFeels organizers tasked with ensuring that everyone has the opportunity to participate in this process and who have recused themselves from the non-identifying rounds of review.__
 
