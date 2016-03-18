@@ -1,0 +1,11 @@
+@media print {
+  .response button,
+  .edit_proposal,
+  .scrubber,
+  .user_nav,
+  header,
+  footer,
+  #notes {
+    display: none;
+  }  
+}
