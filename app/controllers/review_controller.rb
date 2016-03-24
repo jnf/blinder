@@ -1,4 +1,4 @@
-require 'lib/has_access'
+require_relative '../../lib/has_access'
 
 class ReviewController < ApplicationController
   include HasAccess
