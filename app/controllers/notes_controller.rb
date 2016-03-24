@@ -1,3 +1,5 @@
+require 'lib/has_access'
+
 class NotesController < ApplicationController
   include HasAccess
   before_filter :authenticate!
