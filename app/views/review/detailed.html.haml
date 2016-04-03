@@ -5,4 +5,5 @@
     %p!= blind.info
     = render partial: 'response', collection: blind.decorated_responses
 
+#rating= render partial: 'shared/rating', locals: { proposal: @proposal }
 #notes= render partial: 'shared/note_box', locals: { notes: @notes, proposal: @proposal }
