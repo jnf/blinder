@@ -5,6 +5,8 @@ class RatingsController < ApplicationController
 
   def rate
     rating = Rating.find_or_initialize_by ratings_params.merge(user_id: current_user.id)
+    rating.score = params[:score]
+
     if rating.save
       flash[:notice] = "Proposal rating updated!"
       redirect_to list_path(params[:slug])
@@ -17,6 +19,6 @@ class RatingsController < ApplicationController
   private
 
   def ratings_params
-    params.permit :proposal_id, :rating, :user_id, :score
+    params.permit :proposal_id, :rating, :user_id
   end
 end
