@@ -257,7 +257,7 @@ DEPENDENCIES
   pg (~> 0.17.1)
   postmark-rails (~> 0.6.0)
   pry
-  rails (~> 4.0)
+  rails (~> 4.2.1)
   rails-erd
   rails_12factor
   redcarpet (~> 3.1.1)

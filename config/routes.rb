@@ -24,7 +24,7 @@ Blinder::Application.routes.draw do
 
   namespace :control do
     resources :events, only: [:index, :edit, :update], param: :slug do
-      resources :proposals, except: [:update]
+      resources :proposals
     end
   end
 end
