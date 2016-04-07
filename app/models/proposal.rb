@@ -17,6 +17,11 @@ class Proposal < ActiveRecord::Base
 
   accepts_nested_attributes_for :responses
 
+  def user_score(user)
+    user_ratings = ratings.where(user: user)
+    user_ratings.any? ? user_ratings.first.score : 0
+  end
+
   def responses_for(blind)
     question_ids = blind.questions.map &:id
     responses.where(question_id: question_ids).decorate

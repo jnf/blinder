@@ -5,5 +5,5 @@
     = hidden_field_tag :slug, proposal.event.slug
     = hidden_field_tag :proposal_id, proposal.id
     = hidden_field_tag :score, score
-    = submit_tag score
+    = submit_tag score, class: score_class(proposal, score)
 %span Strongly Recommended
