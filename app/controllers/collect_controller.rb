@@ -5,7 +5,11 @@ class CollectController < ApplicationController
   ROBOT_ERROR = "There was a problem validating your <span>human key</span>. Please try again.".html_safe
 
   def home
-    @event = Event.where(slug: params[:event_slug]).first.decorate
+    if params[:event_slug]
+      @event = Event.where(slug: params[:event_slug]).first.decorate
+    else
+      @event = Event.active.any? ? Event.active.first.decorate : Event.last.decorate
+    end
   end
 
   def new
@@ -26,6 +30,7 @@ class CollectController < ApplicationController
 
     @is_a_human = @event.is_a_human?(params[:human_key])
 
+    params.permit! # this is a terrible idea; someone please do this right.
     @proposal.responses.build(params[:responses])
 
     if @is_a_human && @proposal.save
@@ -60,7 +65,7 @@ class CollectController < ApplicationController
     @is_a_human = @event.is_a_human?(params[:human_key])
 
     @proposal.responses.each do |response|
-      selected = params[:responses].find { |param| param[:id] == response.id.to_s }
+      selected = response_update_params.find { |param| param[:id] == response.id.to_s }
       response.update(selected) if selected
     end
 
@@ -92,11 +97,15 @@ class CollectController < ApplicationController
     params.permit(:event_id, :slug, :responses)
   end
 
+  def response_update_params
+    params.permit(responses: [:id, :question_id, :value]).require(:responses)
+  end
+
   def send_confirmation_email
     mailer = Postmark::ApiClient.new ENV['POSTMARK_API_KEY']
-    mailer.deliver from:      'cfp@steelcityruby.org',
+    mailer.deliver from:      ENV['CFP_FROM'],
                    to:        @proposal.get_email_address,
-                   bcc:       'cfp@steelcityruby.org',
+                   bcc:       ENV['CFP_BCC'],
                    subject:   "Thank you for submitting to #{ @proposal.event.title }!",
                    tag:       'cfp-thanks',
                    html_body: render_to_string(layout: false, template: "collect/thanks")

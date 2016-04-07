@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   # This should not be used because we do not allow open registration
   # Use check_from_omniauth below
   def self.register_from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+    where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name
@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   end
 
   def self.check_from_omniauth(auth)
-    user = where(auth.slice(:provider, :uid)).first
+    user = where(provider: auth.provider, uid: auth.uid).first
     if user
       user.name = auth.info.name
       user.oauth_token = auth.credentials.token

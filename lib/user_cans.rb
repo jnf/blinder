@@ -16,6 +16,7 @@ class UserCans
     can :"control::proposals"
     can :review
     can :notes
+    can :ratings
   end
 
   class Reviewer
@@ -23,5 +24,6 @@ class UserCans
 
     can :review
     can :notes
+    can :ratings
   end
 end

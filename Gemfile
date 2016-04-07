@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
+ruby '2.2.2'
 
-gem 'rails', '4.0.3'
+gem 'rails', '~> 4.2.1'
 gem 'haml'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -29,6 +30,7 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'pry'
+  gem 'rails-erd'
 end
 
 group :production do

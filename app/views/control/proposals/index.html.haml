@@ -5,7 +5,7 @@
     - @unsafe.each do |proposal|
       %li
         = link_to proposal.slug[0,6], edit_control_event_proposal_path(@event, proposal), class: 'slug'
-        %span.destroy= link_to '(destroy)', control_event_proposal_path(@event, proposal), method: :delete, confirm: "Destroy for realsies?"
+        %span.destroy= link_to '(destroy)', control_event_proposal_path(@event, proposal), method: :delete, :'data-confirm' => "Destroy for realsies?"
         %span.notes=  notes_for proposal
         %span.updated= "updated: #{ last_updated proposal }"
 

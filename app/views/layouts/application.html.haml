@@ -6,18 +6,26 @@
     %meta{ :name => "description", :content => "" }
     %meta{ :name => "viewport", :content => "width=device-width" }
 
-    %title= @title || "Steel City Ruby: CFP"
+    %link{ rel: 'icon', href: '/favicon.ico', type: 'image/x-icon' }
+
+    %title= @title || "Open Source & Feelings: Call for Proposals"
 
     = stylesheet_link_tag "application"
-
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lato:300,400,900"
+    = stylesheet_link_tag "print", media: "print"
     = javascript_include_tag "application"
-
     = csrf_meta_tags
 
   %body
+    %header
+      %h1.logo Open Source & Feelings
     %main
-      = link_to content_tag(:h1, "Steel City Ruby"), "http://steelcityruby.org", class: 'logo'
       .notice= flash[:notice]
       = render 'shared/user_nav'
       .content= yield
-    %footer=  image_tag 'skyline.png', alt: "Pittsburgh downtown skyline"
+    %footer
+      %address
+        %ul
+          %li= link_to "Code of Conduct", "http://www.osfeels.com/conduct", class: 'footer-link conduct'
+          %li= mail_to "hello@osfeels.com", "hello@osfeels.com", class: 'footer-link mail'
+          %li= link_to "@OSFeels", "https://twitter.com/OSFeels", class: 'footer-link twitter'

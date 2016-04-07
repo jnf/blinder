@@ -3,21 +3,19 @@
   %table
     %thead
       %tr
-        %th
-          Slug
-        %th
-          Notes
+        %th Title
+        %th Your Rating
+        %th Notes
         - @sortable_questions.each do |question|
           %th.sortable= question.label
-        %th
-          Updated
     %tbody
       - @proposals.each do |proposal|
+        - rating = proposal.ratings.where(user: current_user).first
         %tr
           %td
-            = link_to proposal.slug[0,6], review_path(@event, proposal), class: 'slug'
+            = link_to proposal.get_title, review_path(@event, proposal), class: 'slug'
+          %td.rating= "#{rating ? rating.score : '-'}/5"
           %td.notes=  notes_for proposal
           - @sortable_questions.each do |question|
             - response = proposal.response_for_question(question)
             %td!= response.value_without_scrub_markers
-          %td.updated= last_updated proposal

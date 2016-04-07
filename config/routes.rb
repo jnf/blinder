@@ -20,10 +20,11 @@ Blinder::Application.routes.draw do
   end
 
   resources :notes, only: [:create, :update]
+  post 'rate' => 'ratings#rate', as: :rate
 
   namespace :control do
     resources :events, only: [:index, :edit, :update], param: :slug do
-      resources :proposals, except: [:create]
+      resources :proposals
     end
   end
 end

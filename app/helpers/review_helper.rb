@@ -15,4 +15,8 @@ module ReviewHelper
       passed_blind_level: response.question.blind.level + 1
     }
   end
+
+  def score_class(proposal,score)
+    proposal.user_score(current_user) == score ? "selected" : ""
+  end
 end

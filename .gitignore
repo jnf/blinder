@@ -16,3 +16,6 @@
 /tmp
 .env
 .DS_Store
+
+erd.pdf
+*.dump
