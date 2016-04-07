@@ -14,7 +14,7 @@
         %tr
           %td
             = link_to proposal.get_title, review_path(@event, proposal), class: 'slug'
-          %td.rating= "#{rating ? rating.score : 0}/5"
+          %td.rating= "#{rating ? rating.score : '-'}/5"
           %td.notes=  notes_for proposal
           - @sortable_questions.each do |question|
             - response = proposal.response_for_question(question)
