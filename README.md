@@ -1,7 +1,15 @@
 # Blinder
 
 This is a work in progress! Of course, what isn't? Essentially, I wanna use this textbook Rails app
-to handle CFP collections for SCRC. At some point, I'll have to write a _real_ README.
+to handle CFP collections for conferences. At some point, I'll have to write a _real_ README.
+
+## Get started
+
+* Run `bin/setup`
+* Run `foreman start`
+* Visit `http://localhost:5000/`
+
+Yes, this is tailored for SCRC 2014. Take a look at `db/seeds.rb` and customize that for your needs, then run `bin/setup` again to reload the data.
 
 ## Running Cucumber
 

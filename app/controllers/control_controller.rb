@@ -1,3 +1,5 @@
+require_relative '../../lib/has_access'
+
 class ControlController < ApplicationController
   include HasAccess
   before_filter :authenticate!
